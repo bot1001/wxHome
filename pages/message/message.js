@@ -174,8 +174,6 @@ Page({
             userInfo.room = a.room;
             userInfo.phone = u.mobile_phone;
             userInfo.name = u.nickname;
-            // wx.setStorageSync('userInfo', userInfo);
-            // console.log(app.show);
             app.userInfo = userInfo;
             //公告栏首页
             app.show = true;

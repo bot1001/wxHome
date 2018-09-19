@@ -82,25 +82,7 @@ Page({
     //   url: ''
     // })
   },
-  //城市地区
-  // bindRegionChange: function (e) {
-  //   console.log('picker发送选择改变，携带值为', e.detail.value)
-  //   this.setData({
-  //     region: e.detail.value
-  //   })
-  // },
-  // bindAllCompanysChange:function(e){
-  //   var that = this;
-  //   // console.log('picker发送选择改变，携带值为', e.detail.value)
-  //   var d = e.detail.value
-  //   // var p = this.data.comm[d].id
 
-  //   that.setData({
-  //     'a_number': d
-      
-  //   })
-
-  // },
   bindCompanyChange:function(e){
     
   },
@@ -247,21 +229,15 @@ Page({
   timeStamp: function () {
     return parseInt(new Date().getTime() / 1000) + '';
   },
+
   formSubmit:function(e){
     var that = this;
-    // var openId = { "test": wx.getStorageSync('openId') };
-    // var unionId = { "test": wx.getStorageSync('unionId') };
-    // var openId = app.openId;
-    // var unionId = app.unionId;
     var name = { "test": e.detail.value.name };
     var phone = { "test": e.detail.value.phone };
     var roomId = this.data.roomId ;
-    // var passWord = { "test": e.detail.value.passWord };
     var gender = { "test": this.data.genderListIndex };
     var region = {"test":this.data.region};
-    // console.log(e.detail.value.name);
-    // console.log(e.detail.value.phone.length);
-    // console.log(this.data.roomId);
+    
     if (name.test == ""){
       wx.showToast({
         title: '姓名不能为空',

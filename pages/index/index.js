@@ -26,152 +26,149 @@ Page({
     sumMoney: app.sum.sumMoney,
     cur: app.sum.cur,
     bef: app.sum.bef,
-    page:1
+    page:1,
   },
   //事件处理函数
   onLoad: function () {
     var that = this;
-    var u = setInterval(function(){
-      if(app.unionId){
-        clearInterval(u);
-        wx.request({
-          url: app.url + 'login/index',
+    wx.login({
+      success: function(res){
+        var code = res.code;
+        wx.request({ //向后台请求unionID和openID
+          url: app.url + 'login/openid',
           data: {
-            unionid: app.unionId
-            // unionid: 'oHq83uPL9OP0e-Hy5-DVSdp_YZr7'
+            appid: app.appid,
+            secret: app.secret,
+            js_code: code,
+            grant_type: 'authorization_code'
           },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success: function (res) {
-
-
+          success: function(res) {
             var r = res.data;
-            if (!r) {
-              wx.reLaunch({
-                // url: '../../pages/index/index', //转跳到首页
-                url: '../../pages/register/register', //转条到注册页面
+            if(!r.unionid && r.openid){ //判断用户是否关注公众号
+              wx.reLaunch({ //如果未关注则转跳到提醒页面
+                url: '../../pages/remind/remind',
               })
-            } else {
-              app.account_id = r.user.account_id;
-              app.realestate_id = r.user.realestate_id;
-              //如果登陆成功则设置首页为可显示状态
-
-              //欠费提示
+            }else{
               wx.request({
-                url: app.url + 'invoice/sum',
+                url: app.url + 'login/index',
                 data: {
-                  realestate_id: r.user.realestate_id
-                }, success: function (res) {
-                  var amount = res.data.amount;
-                  // console.log(res);
-                  if (amount == null) {
-                    that.setData({
-                      payIn: '#17b3ec',
-                      cur: 0,
-                      bef: 0,
-                      payC: '缴费记录',
-                      sumMoney: 0
+                  unionid: 'runionid'
+                },
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success: function (res) {
+                  var r = res.data;
+                  if (!r) {
+                    wx.reLaunch({
+                    url: '../../pages/register/register', //转条到注册页面
                     })
                   } else {
+                    app.account_id = r.user.account_id;
+                    app.realestate_id = r.user.realestate_id;
+                    //如果登陆成功则设置首页为可显示状态
+
+                    //欠费提示
                     wx.request({
-                      url: app.url +'invoice/invoice',
-                      data:{
-                        realestate: r.user.realestate_id
-                      },success:function(r){
-                       that.setData({
-                         sumMoney: amount,
-                         cur: r.data.month,
-                         bef : (amount - r.data.month).toFixed(2),
-                         payC: '我要缴费',
-                         payIn: '#FF4500'
-                       })
+                      url: app.url + 'invoice/sum',
+                      data: {
+                        realestate_id: r.user.realestate_id
+                      }, success: function (res) {
+                        var amount = res.data.amount;
+                        // console.log(res);
+                        if (amount == null) {
+                          that.setData({
+                            payIn: '#17b3ec',
+                            cur: 0,
+                            bef: 0,
+                            payC: '缴费记录',
+                            sumMoney: 0
+                          })
+                        } else {
+                          wx.request({
+                            url: app.url + 'invoice/invoice',
+                            data: {
+                              realestate: r.user.realestate_id
+                            }, success: function (r) {
+                              that.setData({
+                                sumMoney: amount,
+                                cur: r.data.month,
+                                bef: (amount - r.data.month).toFixed(2),
+                                payC: '我要缴费',
+                                payIn: '#FF4500'
+                              })
+                            }
+                          })
+                        }
+                        that.setData({
+                          show: true
+                        })
+                      }
+                    })
+
+                    var re = res.data.address[0];
+                    var u = res.data.user
+
+                    userInfo.community = re.community;
+                    userInfo.building = re.building;
+                    userInfo.unit = re.number;
+                    userInfo.room = re.room;
+                    userInfo.phone = u.mobile_phone;
+                    userInfo.name = u.real_name;
+                    app.userInfo = userInfo;
+                    that.setData({
+                      userInfo: userInfo,
+                      loading: false,
+                      realestate_id: res.data.user.realestate_id
+                    })
+
+                    //公告栏首页
+                    wx.request({
+                      url: app.url + 'news/home?community=' + userInfo.community,
+                      // url: app.url + 'news/home?community=金碧天誉',
+                      success: function (res) {
+                        // console.log(res);
+                        if (res.data) {
+                          that.setData({
+                            notice: res.data
+                          })
+                        } else {
+                          var n = { title: "敬请期待！", content: "", time: "" };
+                          that.setData({
+                            notice: n
+                          })
+                        }
+
+                      }
+                    })
+                    //公告栏更多
+                    wx.request({
+                      url: app.url + 'news/home',
+                      data: {
+                        community: userInfo.community,
+                        // community:'金碧天誉',
+                        page: 1
+                      }, success: function (res) {
+                        // console.log(res);
+                        if (res.data) {
+                          return;
+                        } else {
+                          // that.setData({
+                          //   more: false
+                          // })
+                        }
                       }
                     })
                   }
-                  that.setData({
-                    show: true
-                  })
                 }
               })
-
-              //订单提示
-              // wx.request({
-              //   // url: app.url+'invoice/orders',
-              //   url: app.url + "order/orders",
-              //   data: {
-              //     account_id: app.account_id,
-              //     page: that.data.page
-              //   },
-              //   success: function (res) {
-              //     if(res.data == ''){
-              //       // that
-              //     }
-              //   }
-              // })
-
-              userInfo.community = res.data.address[0].community;
-              userInfo.building = res.data.address[0].building;
-              userInfo.unit = res.data.address[0].number;
-              userInfo.room = res.data.address[0].room;
-              userInfo.phone = res.data.user.mobile_phone;
-              userInfo.name = res.data.user.real_name;
-              // wx.setStorageSync('userInfo', userInfo);
-              // console.log(app.show);
-              app.userInfo = userInfo;
-              // console.log(app.userInfo);
-              that.setData({
-                userInfo: userInfo,
-                loading: false,
-                realestate_id: res.data.user.realestate_id
-              })
-
-              //公告栏首页
-              wx.request({
-                url: app.url + 'news/home?community=' + userInfo.community,
-                // url: app.url + 'news/home?community=金碧天誉',
-                success: function (res) {
-                  // console.log(res);
-                  if (res.data) {
-                    that.setData({
-                      notice: res.data
-                    })
-                  } else {
-                    var n = { title: "敬请期待！", content: "", time: "" };
-                    that.setData({
-                      notice: n
-                    })
-                  }
-
-                }
-              })
-              //公告栏更多
-              wx.request({
-                url: app.url + 'news/home',
-                data: {
-                  community: userInfo.community,
-                  // community:'金碧天誉',
-                  page: 1
-                }, success: function (res) {
-                  // console.log(res);
-                  if (res.data) {
-                    return;
-                  } else {
-                    // that.setData({
-                    //   more: false
-                    // })
-                  }
-                }
-              })
-            }
+            }            
           }
         })
-      }else{
-        return;
       }
-    
-    },500)
+    })
   },
+
   dateYM:function(){
     var t = {};
     var y = new Date().getFullYear().toString();

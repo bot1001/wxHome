@@ -1,9 +1,9 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/register/register",
     "pages/message/message",
-    "pages/order/order",    
+    "pages/order/order",
     "pages/interDetail/interDetail",
     "pages/interaction/interaction",
     "pages/personal/personal",
@@ -11,13 +11,14 @@
     "pages/payDetail/payDetail",
     "pages/interNew/interNew",
     "pages/noticeList/noticeList",
-    "pages/noticeDetail/noticeDetail"
+    "pages/noticeDetail/noticeDetail",
+    "pages/remind/remind"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#32cdad",
     "navigationBarTitleText": "首页",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#dddddd",
