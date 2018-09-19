@@ -1,0 +1,24 @@
+<template name="ComplaintList" class="ComplaintList">
+<block wx:for="{{dataInfo}}" wx:for-item="item" wx:for-index="id">
+ <navigator url="../interDetail/interDetail?content={{item.detail}}&num={{item.number}}&style={{item.ty}}&people={{item.name}}&time={{item.time}}&state={{item.stat}}&ticket_id={{item.ticket_id}}&status={{item.status}}&fc={{item.fc}}">
+  <view class="wrapper" style="background: {{item.bg}}">
+      <view class="infoid">
+        <view>编号：{{item.number}}</view>
+        <view>类型：{{item.ty}}</view>
+        <!-- <view>
+          状态：<text class="state">{{item.stat}}</text>
+        </view> -->
+      </view>
+      <view class="infoDetail">{{item.detail}}</view>
+      <!-- <view class="infotype"></view> -->
+        
+      
+      <view class="infotime">
+        <view>{{item.time}}</view>
+          <view wx:if="{{item.name}}" class="getP">接单人：<text class="people">{{item.name}}</text>
+        </view>
+      </view>
+  </view>
+</navigator>
+ </block>
+</template>

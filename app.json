@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/register/register",
+    "pages/message/message",
+    "pages/order/order",    
+    "pages/interDetail/interDetail",
+    "pages/interaction/interaction",
+    "pages/personal/personal",
+    "pages/myData/myData",
+    "pages/payDetail/payDetail",
+    "pages/interNew/interNew",
+    "pages/noticeList/noticeList",
+    "pages/noticeDetail/noticeDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#32cdad",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#7ad5fb",
+    "borderStyle": "white",
+    "backgroundColor": "#32cdad",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index-1.png",
+        "selectedIconPath": "images/index-2.png"
+      },
+      {
+        "pagePath": "pages/interaction/interaction",
+        "text": "互动",
+        "iconPath": "images/interaction-1.png",
+        "selectedIconPath": "images/interaction-2.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "images/my-1.png",
+        "selectedIconPath": "images/my-2.png"
+      }
+    ]
+  }
+}

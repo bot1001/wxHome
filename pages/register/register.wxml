@@ -1,0 +1,63 @@
+<!--pages/register/register.wxml-->
+<view class="section registerWrapper">
+  <picker bindchange="bindCompanyChange" value="{{t_company}}" range="{{tot_companys}}">
+      <view class="picker">
+        <view>总公司</view><view class="companys">{{tot_companys[t_company]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindCompanysChange" value="{{n_company}}" range="{{companys}}">
+      <view class="picker">
+        <view>分公司</view><view class="companys">{{companys[c_company]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindCommunityChange" value="{{n_community}}" range="{{community}}">
+      <view class="picker">
+        <view>小区</view><view class="companys">{{community[n_community]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindBuildingChange" value="{{buildingListIndex}}" range="{{building}}">
+      <view class="picker">
+        <view>楼宇</view><view class="companys">{{building[n_building]}}</view>
+      </view>
+  </picker>
+
+   <picker bindchange="bindUnitChange" value="{{unitListIndex}}" range="{{unit}}">
+      <view class="picker">
+        <view>单元</view><view class="companys">{{unit[n_unit]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindRoomChange" value="{{roomListIndex}}" range="{{room}}">
+      <view class="picker">
+        <view>房号</view><view class="companys">{{room[n_room]}}</view>
+      </view>
+  </picker>
+  <picker bindchange="bindGenderChange" value="{{genderListIndex}}" range="{{gender}}">
+      <view class="picker">
+        <view>性别</view><view class="companys">{{gender[genderListIndex]}}</view>
+      </view>
+  </picker>
+  <!-- <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      <view class="picker">所在小区</view><view class="area">{{multiArray[0][multiIndex[0]]}}</view>
+      <view class="picker">楼宇</view><view class="floor">{{multiArray[1][multiIndex[1]]}}</view>
+      
+    </view>
+  </picker>
+
+  <picker mode="multiSelector" bindchange="bindUnitChange" bindcolumnchange="bindRoomChange" value="{{roomIndex}}" range="{{roomArray}}">
+    <view class="picker">
+      <view class="picker">单元</view><view class="area">{{roomArray[0][roomIndex[0]]}}</view>
+      <view class="picker">房号</view><view class="floor">{{roomArray[1][roomIndex[1]]}}</view>
+    </view>
+  </picker> -->
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view>预留业主姓名</view><input type="text" class="name" name="name" confirm-type="send"/>
+    <!-- <view>设置密码</view><input type="text" class="passWord" name="passWord" confirm-type="send"/> -->
+    <view>预留手机号</view><input class="phone" type="number" name="phone"/>
+    <button type="primary" form-type="submit" class="btnb">验证登陆</button>
+  </form>
+</view>

@@ -1,0 +1,20 @@
+<!--pages/order/order.wxml-->
+<view wx:if="{{show}}" class="empty">暂无记录</view>
+<view class="complaint-content pay-bottom" wx:else>
+  <view wx:for="{{orderInfo}}" wx:for-index="id" wx:for-item="item" class="wrapper fle">
+    <view class="list">
+      <text class="payContent">订单：{{item.order_id}}
+      </text>
+      <view class="payProject payAmount" style="color:#666666">金额：{{item.amount}}</view>
+    </view>
+    <view class="paystate">
+     <view class="status">状态：{{item.sta}}</view>
+     <view class="time">{{item.time}}</view>
+    </view>
+  </view>
+  <!-- <view class="payWrapper">
+    <view class="payMoney">总计支付：<text class="amount">{{order_amount
+}}</text></view>
+    <view class="payBtn" bindtap="payBtn">缴费</view>
+  </view> -->
+</view>

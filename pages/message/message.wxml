@@ -1,0 +1,12 @@
+<view class="section registerWrapper">
+  <form bindsubmit="formSubmit">
+      <view>真实姓名</view><input class="phone" type="text" name="name" bindblur="bindnick"/>
+      <view>现用手机号</view><input class="phone" type="number" name="phone" bindblur="bindphone"/>
+      <view class="sendTitle">短信验证码</view>
+      <view class="sendWrappwer">
+        <input class="message" type="number" name="message"/>
+        <button bindtap="sendMess" class="sendMess" disabled="{{disabled}}">{{time}}</button>
+      </view>
+      <button type="primary" formType="submit">注册并登陆</button>
+  </form>
+</view>

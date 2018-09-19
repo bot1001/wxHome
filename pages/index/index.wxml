@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{show}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" style="width: 100%;" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="container-main">
+    <view class="notice-wrapper">
+      <view class="notice-icon">
+        <image src="../../images/notice.png" style="width: 40rpx;height: 40rpx"/>公告
+        <!-- <navigator wx:if="{{more}}" class="notice-more" url="../noticeList/noticeList">更多>></navigator> -->
+      </view>
+      <navigator url="../noticeList/noticeList">
+        <view class="notice-content">
+          <view class="notice-title noc">{{notice.title}}</view>
+          
+          <view class="notice-main noc">{{notice.content}}</view>
+          <view class="notice-time">{{notice.time}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view class="pay-wrapper">
+      <view class="notice-icon">
+        <image src="../../images/pay.png" style="width: 40rpx;height:40rpx"/>缴费
+         <navigator class="notice-more" url="../order/order">我的订单</navigator>
+      </view>
+      <navigator url="../payDetail/payDetail">
+        <view class="pay-content">
+          <view class="payNotice">
+           <view class="curM">总欠费<text class="pr">￥{{sumMoney}}</text></view>
+            <view class="curM">当月欠费<text class="pr">￥{{cur}}</text></view>
+            <view class="befM">往期欠费<text class="pr">￥{{bef}}</text></view>
+          </view>
+          <view class="pay-button" style="background:{{payIn}}">{{payC}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view class="info-wrapper">
+    <view class="notice-icon range">
+        <image src="../../images/house.png" style="width:40rpx;height:40rpx"/>房屋
+        <text class="gray">{{userInfo.community}}</text>
+    </view>
+    <!-- <view class="range">水户皇门</view> -->
+    <view class="range-load" wx:if="{{loading}}"><image src="../../images/loading.gif" class="load-img"></image></view>
+    <view class="range-info" wx:if="{{userInfo}}">
+      <view class="building">
+        <view class="info-header">楼宇</view>
+        <view class="info-foot">{{userInfo.building}}</view>
+      </view>
+      <view class="unit">
+        <view class="info-header">单元</view>
+        <view class="info-foot">{{userInfo.unit}}</view>
+      </view>
+      <view class="roomNumber">
+        <view class="info-header">房号</view>
+        <view class="info-foot">{{userInfo.room}}</view>
+      </view>
+    </view>
+    <view class="personal-info" wx:if="{{userInfo}}">
+      <view class="name">
+        <view class="info-header">姓名</view>
+        <view class="info-foot">{{userInfo.name}}</view>
+      </view>
+      <view class="number">
+        <view class="info-header">联系电话</view>
+        <view class="info-foot">{{userInfo.phone}}</view>
+      </view>
+      <!-- <view class="area">
+        <view class="info-header">房屋面积</view>
+        <view class="info-foot">120平米</view>
+      </view> -->
+    </view>
+    <!-- <view class="time-info">
+      <view class="mh-time">
+        <view class="info-header">交房时间</view>
+        <view class="info-foot">2018-5-16</view>
+      </view>
+      <view class="fu-time">
+        <view class="info-header">装修时间</view>
+        <view class="info-foot">2018-5-17</view>
+      </view>
+    </view> -->
+  </view>
+  </view> 
+</view>

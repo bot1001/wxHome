@@ -1,0 +1,66 @@
+/* pages/order/order.wxss */
+.empty{
+  text-align: center;
+  font-size: 40rpx;
+  background:rgb(220,220,220);
+  width: 50%;
+  height: 300rpx;
+  line-height: 300rpx;
+  border-radius: 25rpx;
+  margin: 50% auto 0 auto;
+}
+.payWrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display:flex;
+  flex-wrap:wrap;
+  flex-grow:1;
+  align-items:flex-start;
+  align-content:flex-start;
+  justify-content:space-between;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+/* .pay-bottom{
+  background: #fff;
+} */
+.payMoney{
+  height: 100%;
+  line-height: 100rpx;
+}
+.payBtn{
+  height: 100%;
+  background: #fd612b;
+  color: #fff;
+  width: 180rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.amount{
+  color: #fd612b;
+  font-size: 48rpx;
+}
+.fle{
+  display:flex;
+  justify-content:space-between;
+  background: #fff;
+}
+.fle:last-child{
+  margin-bottom: 0;
+}
+.list{
+  margin-bottom:10rpx;
+}
+.time,.payAmount{
+  margin-top:30rpx;
+}
+.pay-bottom{
+  padding: 10rpx;
+}
+.status{
+  text-align: right;
+}

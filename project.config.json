@@ -1,0 +1,81 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx5b66383c1027250a",
+	"projectname": "wx_ydwy",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": 0,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "投诉新增",
+					"pathName": "pages/interNew/interNew",
+					"query": "show=true"
+				},
+				{
+					"id": 3,
+					"name": "短信",
+					"pathName": "pages/message/message",
+					"query": "show=true"
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": "show=true"
+				},
+				{
+					"id": -1,
+					"name": "投诉回复",
+					"pathName": "pages/interDetail/interDetail",
+					"query": "show=true"
+				},
+				{
+					"id": -1,
+					"name": "公告详情",
+					"pathName": "pages/noticeDetail/noticeDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "短信",
+					"pathName": "pages/message/message"
+				}
+			]
+		}
+	}
+}

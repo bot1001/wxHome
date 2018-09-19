@@ -1,0 +1,19 @@
+ <view class="container-main">
+  <view class="reWrapper">
+    <view class="interWrapper">
+      <view class="interLeft">编号：<text>{{num}}</text></view>
+      <view>状态：<text class="interRight" style="color: {{fc}}">{{state}}</text></view>
+    </view>
+    <view class="interContent">{{content}}</view>
+  </view>
+  <view>
+    <import src="../../reply/reply.wxml"/>
+    <template is="replyList" data="{{replyInfo}}"/>
+  </view>
+  <view class="btnB">
+    <form bindsubmit="bindFormSubmit">
+      <textarea placeholder="点击此处输入内容" class="interInput" auto-height name="textarea" value="{{textarea}}"/>
+      <button form-type="submit" class="submit"> 提交 </button>
+    </form>
+  </view>
+</view> 

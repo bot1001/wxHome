@@ -1,0 +1,45 @@
+<view class="myDataWrapper">
+  <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
+  <block> 
+  <view class="userinfo">
+     <!-- <image src="{{userInfo.avatarUrl}}" background-size="cover" class="userinfo-avatar"></image>
+    <text class='userinfo-nickname'>{{userInfo.nickName}}</text> -->
+    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+    <open-data type="userNickName" class='userinfo-nickname'></open-data>
+  </view>
+  </block>
+  <!-- <input class="myDatainput" type="text" placeholder="昵称" confirm-type="done" value="{{value.nickname}}"></input> -->
+  <view class="flexInfo">
+    <view>
+      <view class="myDataTitle">姓名</view>
+      <input class="myDatainput" type="text" placeholder="姓名" confirm-type="done" value="{{userInfo.name}}"></input>
+    </view>
+    <view>
+      <view class="myDataTitle">小区</view>
+      <input class="myDatainput" type="text" placeholder="性别" confirm-type="done" value="{{userInfo.community}}"></input>
+    </view>
+      
+  </view>
+ 
+  
+  <view class="myDataTitle">联系方式</view>
+  <input class="myDatainput" type="number" placeholder="联系方式" confirm-type="done" value="{{userInfo.phone}}"></input>
+  <view class="myDataTitle">邮箱</view>
+  <input class="myDatainput" type="text" placeholder="电子邮箱" confirm-type="done" value=""></input>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+  <view  class="flexInfo">
+    <view class="locaInfo">
+       <view class="myDataTitle">省份</view>
+      <view class="myDatainput">{{region[0]}}</view>
+    </view>
+    <view class="locaInfo">
+       <view class="myDataTitle">市级</view>
+      <view class="myDatainput">{{region[1]}}</view>
+    </view>
+    <view class="locaInfo">
+      <view class="myDataTitle">县/区</view>
+      <view class="myDatainput">{{region[2]}}</view>
+    </view>
+  </view> 
+  </picker>
+</view>

@@ -1,0 +1,64 @@
+.cellInfo{
+  text-align:right;
+  padding:10px;
+  font-size:38rpx
+}
+.wrapper{
+  display: flex;
+  justify-content:space-between;
+  font-size: 36rpx;
+  padding: 15rpx;
+}
+.paystate{
+  color: #fd612b;
+  line-height:90rpx;
+  font-size: 46rpx;
+}
+.payProject{
+  margin-left: 30rpx;
+}
+.payWrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display:flex;
+  flex-wrap:wrap;
+  flex-grow:1;
+  align-items:flex-start;
+  align-content:flex-start;
+  justify-content:space-between;
+  height: 100rpx;
+  width: 100%;
+  background: rgb(250, 247, 94);
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.payMoney{
+  height: 100%;
+  line-height: 100rpx;
+}
+.payBtn{
+  height: 100%;
+  background: #fd612b;
+  color: #fff;
+  width: 180rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.pay-bottom{
+  padding-bottom: 120rpx;
+  padding-top: 10rpx;
+}
+.amount{
+  color: #fd612b;
+  font-size: 48rpx;
+}
+.description{
+  color: #000;
+  font-size: 36rpx;
+  padding: 10rpx;
+}
+.payContent{
+  padding: 10rpx;
+  color: #666;
+}

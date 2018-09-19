@@ -1,0 +1,14 @@
+<template name="replyList" class="replyList">
+  <block wx:for="{{replyInfo}}" wx:for-item="item">
+    <view class="wrapper" style="background: {{item.bg}}">
+      <view class="replyHeader" style="background:{{item.tit}}">
+        <view class="replyMan"><text>{{item.answer_name}}</text></view>
+        <view class="Footright"><text>{{item.reply_time}}</text></view>
+      </view>
+      <view class="replyContent">{{item.content}}</view>
+      <view class="replyFoot">
+        
+      </view>
+    </view>
+  </block>
+</template>

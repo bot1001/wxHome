@@ -1,0 +1,15 @@
+<!--pages/interNew/interNew.wxml-->
+<view class="newWrapper">
+  <view class="section">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio{{index}}" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/><text class="radio-text">{{item.value}}</text>
+      </label>
+    </radio-group>
+    <form bindsubmit="bindFormSubmit" class="formwrapper">
+      <textarea placeholder="点击此处输入内容" class="interInput" auto-height name="textarea" value="{{textarea}}"/>
+      <button form-type="submit" class="submit"> 提交 </button>
+    </form>
+  </view>
+</view>
+ 

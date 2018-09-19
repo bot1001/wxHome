@@ -1,0 +1,45 @@
+.complaint-content{
+  /* padding: 0 10rpx 10rpx 10rpx; */
+  background: #f6f7f8;
+  min-height: 100%;
+  color: #333;
+  font-family: 'Microsoft Yahei';
+  padding-top: 10rpx;
+  padding-bottom: 120rpx;
+  box-sizing: border-box;
+}
+.infotime{
+  display:flex;
+  justify-content:space-between;
+}
+.infoTitle{
+  text-align: right;
+  padding: 10px;
+  font-size: 38rpx;
+}
+.complaint-new{
+  position: fixed;
+  bottom: 20rpx;
+  left: 40%;
+  height: 90rpx;
+  width: 20%;
+  background: rgb(187, 201, 60);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 80rpx;
+  color: #fff;
+}
+.complaint-new:active{
+  background: blueviolet;
+  color: #fff;
+}
+.infoDetail{
+  text-align: justify;
+  font-size: 36rpx;
+  color: #000;
+}
+.getP{
+  float: right;
+}

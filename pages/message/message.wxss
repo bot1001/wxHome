@@ -1,0 +1,29 @@
+/* pages/message/message.wxss */
+.section{
+  font-size: 34rpx;
+}
+.registerWrapper{
+  padding: 20rpx;
+}
+.sendWrappwer{
+  display: flex;
+  flex-direction: row;
+}
+.phone,.message{
+  background: #e3e3e3;
+  padding: 10rpx;
+  border:none;
+  border-radius: 5px;
+  margin: 20rpx auto;
+  min-width: 70%;
+  color: #333;
+  min-height: 50rpx;
+}
+.sendMess{
+  background: pink;
+  min-height: 50rpx;
+  width: 250rpx;
+  padding: 10rpx;
+  margin: 20rpx 0 20rpx 20rpx;
+  font-size: 22rpx;
+}

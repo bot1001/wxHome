@@ -1,0 +1,29 @@
+/* .noticeWrapper{
+  display: flex;
+  justify-content:space-between;
+} */
+.container-main{
+  padding: 10rpx;
+}
+.notice_title{
+  font-size: 36rpx;
+}
+.notice_main{
+  color: #333;
+  text-align:justify;
+  /* text-indent:2em; */
+  min-height: 32rpx;
+}
+.notice_time{
+  color: #333;
+}
+.zw{
+  text-align: center;
+  width: 30%;
+  line-height: 220rpx;
+  position: fixed;
+  top: 36%;
+  left: 35%;
+  background: rgb(227, 228, 228);
+  border-radius: 20rpx;
+}

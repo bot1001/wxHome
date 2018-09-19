@@ -1,0 +1,8 @@
+<view class="complaint-content">
+  <import src="../../utils/util.wxml"/>
+  <!-- <view class="infoTitle" wx:if="{{userInfo.community}}"><text>{{userInfo.community}}  {{userInfo.unit}}单元  {{userInfo.room}}</text></view> -->
+  <template is="ComplaintList" data="{{dataInfo}}"/>
+  <navigator url="../interNew/interNew">
+    <view class="complaint-new">+</view>
+  </navigator>
+</view>

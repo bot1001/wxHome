@@ -1,0 +1,147 @@
+/**index.wxss**/
+.notice-wrapper{
+ background: #fff;
+ padding: 0 10rpx 10rpx 10rpx;
+}
+.range-load{
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+}
+.load-img{
+  width: 32px;
+  height: 32px;
+}
+.notice-icon{
+  position: relative;
+  border-bottom: 1rpx solid rgba(164,207,238,.5);
+  padding: 5px 0;
+  font-size: 36rpx;
+}
+.notice-icon image{
+  vertical-align: middle;
+}
+.notice-content{
+  margin-top:10rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.notice-title{
+  position: relative;
+  padding-top: 10rpx;
+  color: #000;
+  text-align: center;
+  font-size: 34rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+.noc{
+  background:rgba(164,207,238,.5) ;
+}
+.notice-time{
+  margin-top: 10rpx;
+  text-align: right;
+}
+.notice-more{
+  position: absolute;
+  right: 0;
+  color: #7ad5fb;
+  display: inline;
+}
+.gray{
+  position: absolute;
+  right: 0;
+}
+.notice-main{
+  text-align:justify;
+  min-height: 80rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  padding: 0 10rpx 10rpx 10rpx;
+}
+.pay-wrapper{
+  background: #fff;
+  margin-top: 10rpx;
+  padding: 0 10rpx 10rpx 10rpx;
+}
+.payNotice{
+  background: rgba(164,207,238,.5);
+  margin: 10rpx auto;
+  border-radius: 10rpx;
+  padding: 0 40rpx;
+}
+.curM,.befM{
+  text-align: left;
+  padding: 20rpx 0;
+}
+.curM{
+  border-bottom: 1px solid #fff;
+}
+.pr{
+  float: right;
+  color:#7ad5fb;
+  font-size: 40rpx;
+}
+.pay-content{
+  min-height: 160rpx;
+  text-align: center;
+}
+.numstyle{
+  font-size: 36rpx;
+  color: red;
+}
+.pay-button{
+  height: 80rpx;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 8rpx;
+  font-size: 40rpx;
+}
+.pay-button:active{
+  background: #fd4403;
+}
+.info-wrapper{
+  font-size: 36rpx;
+  margin-top: 10rpx;
+  background: #fff;
+  padding: 0 10rpx 10rpx 10rpx;
+}
+.range{
+  border: none;
+}
+.range-info,.personal-info,.time-info{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-header{
+  background: #17b3ec;
+  padding: 10rpx;
+  color: #fff;
+}
+.info-foot{
+  padding: 10rpx;
+  color: #333;
+}
+.mh-time,.fu-time,.name,.number,.area,.range-info,.personal-info,.time-info,.building,.unit,.roomNumber{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow:1;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.range-info,.personal-info,.time-info{
+  border: 1rpx solid #17b3ec;
+}
+/* .range-info.area{
+  border-bottom: none;
+} */
+.area{
+  border-top: 1rpx solid #17b3ec;
+}
+ .range-info{
+  border-bottom: none;
+} 

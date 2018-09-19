@@ -1,0 +1,73 @@
+.my-wrapper{
+  padding: 10rpx 10rpx;
+  background: #f6f7f8;
+  font-size: 36rpx;
+  color: #333;
+}
+.name-wrapper{
+  background: #fff;
+  padding: 10rpx;
+  position: relative;
+}
+.modify{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  width: 30%;
+  height: 170rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #17b3ec;
+  box-sizing: border-box;
+}
+.name,.number{
+  width: 65%;
+  height: 80rpx;
+  line-height: 80rpx;
+  /* text-align: center; */
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  padding-right: 10rpx;
+  border: 1px solid #17b3ec;
+}
+.number{
+  margin-top: 10rpx;
+}
+.nameTitle,.numberTitle{
+  width: 200rpx;
+  background: #17b3ec;
+  color: #fff;
+  text-align: center;
+}
+.houseInfo{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx;
+  margin-top: 10rpx;
+  background: #fff;
+}
+.info-content{
+  flex: 1;
+}
+.info-content:first-child{
+  flex: 2;
+}
+.content-header{
+  background: #17b3ec;
+  text-align: center;
+  padding: 10rpx 0;
+  color: #fff;
+}
+.content-text{
+  text-align: center;
+  padding: 10rpx 0;
+}
+.myAdvise,.changeNumber,.changePassword,.clear{
+  padding: 20rpx 0;
+  text-align: center;
+  margin-top: 10rpx;
+  background: #fff;
+}

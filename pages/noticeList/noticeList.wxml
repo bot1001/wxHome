@@ -1,0 +1,13 @@
+<view class="container-main">
+  <view class="zw" wx:if="{{more}}">暂无更多内容</view>
+  <block wx:for="{{noticeList}}">
+    <navigator url="../../pages/noticeDetail/noticeDetail?id={{item.data.id}}" hover-class="navigator-hover">
+      <view class="wrapper" style='background:{{item.data.color}}' wx:if="{{noticeList}}">
+            <view class="notice_title">{{item.data.title}}</view>
+            <view class="notice_main" wx:if="{{item.data.excerpt}}">摘要：{{item.data.excerpt}}</view>
+            <view class="notice_time">{{item.data.time}}</view>
+      </view>
+    </navigator>
+  </block>
+</view>
+

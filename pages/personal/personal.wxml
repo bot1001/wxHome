@@ -1,0 +1,43 @@
+<view class="my-wrapper">
+  <view class="name-wrapper">
+    <view class="name">
+      <view class="nameTitle">姓名</view>
+      <view>{{userInfo.name}}</view>
+    </view>
+    <view class="number">
+      <view class="numberTitle">联系方式</view>
+      <view>{{userInfo.phone}}</view>
+    </view>
+    <navigator url="../myData/myData">
+      <view class="modify">
+        <image src="../../images/right.png" style="height: 50%;width: 100rpx;margin: 0 auto; vertical-align: middle;"/> 
+      </view>
+    </navigator>
+  </view>
+  <view class="houseInfo">
+    <view class="info-content">
+      <view class="content-header">小区</view>
+      <view class="content-text">{{userInfo.community}}</view>
+    </view>
+    <view class="info-content">
+      <view class="content-header">楼宇</view>
+      <view class="content-text">{{userInfo.building}}</view>
+    </view>
+    <view class="info-content">
+      <view class="content-header">单元</view>
+      <view class="content-text">{{userInfo.unit}}</view>
+    </view>
+    <view class="info-content">
+      <view class="content-header">房号</view>
+      <view class="content-text">{{userInfo.room}}</view>
+    </view>
+  </view>
+  <view class="someOperation">
+    <view class="myAdvise">我的投诉/建议</view>
+    <view class="changeNumber">更换手机号码</view>
+    <view class="changePassword">更换密码</view>
+    <!-- <view class="clear" bindtap='clearData'>清理缓存</view> -->
+  </view>
+  
+
+</view>
