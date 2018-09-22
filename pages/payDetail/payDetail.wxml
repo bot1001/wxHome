@@ -1,4 +1,4 @@
-<view class="complaint-content pay-bottom">
+<view class="complaint-content pay-bottom" wx:if="{{payDetail}}">
   <view class="cellInfo">{{userInfo.community}} {{userInfo.unit}} {{userInfo.room}}</view>
   <view wx:for="{{payDetail}}" wx:for-index="id" wx:for-item="item" class="wrapper" style="background: {{item.bgcolor}}">
     <view>
@@ -12,8 +12,10 @@
      {{item.invoice_amount}}
     </view>
   </view>
+  
   <view class="payWrapper" wx:if="{{payShow}}">
     <view class="payMoney">总计支付：<text class="amount">{{sumMoney}}</text></view>
     <view class="payBtn" bindtap="payBtn">缴费</view>
   </view>
 </view>
+<view class="elseC" wx:else>暂无记录</view>

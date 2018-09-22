@@ -1,1 +1,17 @@
 /* pages/remind/remind.wxss */
+.n{
+  width: 80%;
+  height: 80px;
+  margin: auto;
+  font-weight: bolder;
+  margin-top: 35%;
+  background: rgba(4, 194, 178, 0.493);
+  font-size: 50rpx;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 15rpx;
+}
+
+.text{
+  color: red
+}

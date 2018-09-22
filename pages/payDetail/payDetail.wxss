@@ -62,3 +62,29 @@
   padding: 10rpx;
   color: #666;
 }
+.elseC{
+  width: 30%;
+  position: fixed;
+  top: 35%;
+  left: 35%;
+  background: rgba(225, 247, 106, 0.329);
+  font-size: 34rpx;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.bg0{
+  color: #fd612b;
+  background: #FFC8B4
+}
+
+.bg1{
+  color: #333;
+  background: rgba(223, 222, 222, 0.692)
+}
+
+.bg2{
+  color: #333;
+  background: rgba(187, 255, 238, 0.534)
+}

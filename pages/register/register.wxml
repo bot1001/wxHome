@@ -1,8 +1,8 @@
 <!--pages/register/register.wxml-->
 <view class="section registerWrapper">
-  <picker bindchange="bindCompanyChange" value="{{t_company}}" range="{{tot_companys}}">
+  <picker bindchange="bindCompanyChange" value="{{t_company}}" range="{{tot_company}}">
       <view class="picker">
-        <view>总公司</view><view class="companys">{{tot_companys[t_company]}}</view>
+        <view>总公司</view><view class="companys">{{tot_company[t_company]}}</view>
       </view>
   </picker>
 
@@ -58,6 +58,6 @@
     <view>预留业主姓名</view><input type="text" class="name" name="name" confirm-type="send"/>
     <!-- <view>设置密码</view><input type="text" class="passWord" name="passWord" confirm-type="send"/> -->
     <view>预留手机号</view><input class="phone" type="number" name="phone"/>
-    <button type="primary" form-type="submit" class="btnb">验证登陆</button>
+    <button type="primary" form-type="submit" class="btnb">验证身份</button>
   </form>
 </view>

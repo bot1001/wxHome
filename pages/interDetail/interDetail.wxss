@@ -12,10 +12,8 @@
   justify-content:space-between;
   color:#000;
   font-size: 36rpx;
-  margin-bottom: 20rpx;
   background:rgba(0,0,0,0.2);
   border-radius:10rpx;
-
 }
 .interRight{
  text-align:justify;
@@ -41,7 +39,6 @@
   background: #E0E0E0;
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
-
 }
 .wrapper {
   padding: 0;
@@ -65,10 +62,12 @@
 .btnB{
   padding: 20rpx;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 20rpx;
+  left: 2%;
+  width: 90%;
+  margin: auto;  
   background: #0fd0bd;
+  border-radius: 15rpx;
 }
 .interInput{
   min-height: 50rpx;
@@ -80,4 +79,5 @@
 }
 .submit{
   width: 180rpx;
+  font-weight: bolder;
 }

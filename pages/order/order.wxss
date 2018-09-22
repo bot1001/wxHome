@@ -54,13 +54,42 @@
 }
 .list{
   margin-bottom:10rpx;
+  margin-left: 13rpx;
+  width: 50%
 }
 .time,.payAmount{
   margin-top:30rpx;
 }
 .pay-bottom{
-  padding: 10rpx;
+  /* padding: 10rpx; */
+  margin-bottom:8rpx
 }
-.status{
-  text-align: right;
+
+.order1{
+  width: 100%;
+  display: flex;
+  border-radius: 15rpx;
+  background: rgba(241, 209, 65, 0.1)
+}
+
+.order2{
+  width: 100%;
+  display: flex;
+  color: gray;
+  border-radius: 15rpx;
+  background: rgba(0, 0, 0, 0.1)
+}
+
+.order3{
+  width: 100%;
+  display: flex;
+  border-radius: 15rpx;
+  background: rgba(0, 0, 0, 0.1)
+}
+.time3{
+  display: none
+}
+
+.time1{
+  display: none;
 }

@@ -68,31 +68,31 @@ Page({
           if (payContent[i].invoice_status == 0){
             // payContent[i].invoice_status = '欠费';
             payContent[i].color = '#fd612b';
-            payContent[i].bgcolor = '#FFC8B4';
+            payContent[i].bgcolor = 'rgba(255, 200, 180, 0.452)';
            
           } else if (payContent[i].invoice_status == 3){  
             // payContent[i].invoice_status = '刷卡';
             payContent[i].color = '#333';
-            payContent[i].bgcolor = '#BBFFEE';
+            payContent[i].bgcolor = 'rgba(187, 255, 238, 0.534)';
           
           } else if (payContent[i].invoice_status == 2){
             // payContent[i].invoice_status = '微信';
             payContent[i].color = '#333';
-            payContent[i].bgcolor ='#CCFF99';
+            payContent[i].bgcolor ='rgba(204, 255, 153, 0.473)';
            
           } else if (payContent[i].invoice_status == 6) {
             // payContent[i].invoice_status = '现金';
             payContent[i].color = '#333';
-            payContent[i].bgcolor = '#FFFFBB';
+            payContent[i].bgcolor = 'rgba(255, 255, 187, 0.445)';
            
           } else if (payContent[i].invoice_status == 8) {
             // payContent[i].invoice_status = '优惠';
             payContent[i].color = '#333';
-            payContent[i].bgcolor = '#ccccff';
+            payContent[i].bgcolor = '#ccffcca8';
           
           }else{
             payContent[i].color = '#333';
-            payContent[i].bgcolor = '#AAAAAA';
+            payContent[i].bgcolor = 'rgba(223, 222, 222, 0.692)';
             
           }
         }
@@ -270,23 +270,26 @@ Page({
     // var openId = wx.getStorageSync('openId');
     var openId = app.openId;
     var amount = that.data.sumMoney;
+
     wx.request({
       url: app.url +'invoice/order-create',
       data:{
         realestate: app.realestate_id,
         account: app.account_id
       },success:function(res){
-        // console.log(res);
-        let order_id = res.data;
-        wx.request({
-          // url: app.url+'pay/wx?order_id=20180817171504315&description=%E7%89%A9%E4%B8%9A%E7%BC%B4%E8%B4%B9&community=16&amount=0.01&openid=oltpJ5AdykNk6FE6c2_5wIvASYPw',
-          url: app.url + 'pay/wx?order_id=' + order_id + '&description=address&amount=' + amount + '&openid=' + openId,
-          data: {  // 这里正常项目不会只有openid一个参数
-
+        let order_id = res.data.order_id; //订单id
+        let address = res.data.address; //订单地址
+        wx.request({          
+          url: app.url + 'pay/wx',//统一下单接口
+          data: {  // 接口传参
+             order_id: order_id,
+             description: address,
+             amount: amount,
+             openid: app.openid
           },
           method: 'GET',
           success: function (res) {
-            // console.log(res);
+            // 发起微信支付
             var appId = res.data.appid;
             var nonceStr = res.data.nonce_str;
             var pkg = 'prepay_id=' + res.data.prepay_id;
@@ -294,6 +297,7 @@ Page({
             // console.log(that.orderNumber());
             if (res.result_code = 'SUCCESS') {
               var payModel = res;
+              // 微信信息加密
               var paySign = that.hexMD5('appId=' + appId + '&nonceStr=' + nonceStr + '&package=' + pkg + '&signType=MD5&timeStamp=' + timeStamp + "&key=yanzushiwangbadan383838438888888").toUpperCase();
               wx.requestPayment({
                 'timeStamp': timeStamp,
@@ -301,14 +305,14 @@ Page({
                 'package': 'prepay_id=' + payModel.data.prepay_id,
                 'signType': 'MD5',
                 'paySign': paySign,
+
                 'success': function (res) {
-                  // console.log("SUCCESS");
                   wx.showToast({
                     title: '支付成功',
                     icon: 'success',
                     duration: 2000
                   })
-                  wx.redirectTo({
+                  wx.redirectTo({ //如果支付成功转跳到订单页面
                     url: '../../pages/order/order'
                   })
                 },
@@ -324,9 +328,6 @@ Page({
         })
       }
     })
-
-    
-  
   }
   ,
   /*时间戳 */
@@ -385,8 +386,6 @@ Page({
 
     var d = 271733878
 
-
-
     for (var i = 0; i < x.length; i += 16) {
 
       var olda = a
@@ -396,8 +395,6 @@ Page({
       var oldc = c
 
       var oldd = d
-
-
 
       a = this.ff(a, b, c, d, x[i + 0], 7, -680876936)
 
@@ -604,16 +601,4 @@ Page({
     return currentDate;
 
   }
-//   /*终端ip*/
-//   terminal:function(){
-//     let that = this;
-//     wx.request({
-//       url: 'https://ip-api.com/json',
-//       success: function (e) {
-//        that.setData({
-//          terminal: e.data.query
-//        })
-//       }
-//     })
-//   }
 })

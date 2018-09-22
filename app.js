@@ -41,11 +41,16 @@ App({
     show: false,
     userInfo:'',
     account_id:'',
+    community: '',
+    building: '',
+    number: '',
     realestate_id:'',
     timeS:'',
     registerInfo:'',
     registerNeed:{},
     sum: {},
+    openid:'',
+    unionid:''
     // notice:'',
     // more: true
   },

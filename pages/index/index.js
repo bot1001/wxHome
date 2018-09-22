@@ -49,10 +49,12 @@ Page({
                 url: '../../pages/remind/remind',
               })
             }else{
+              app.openid = r.openid;
+              app.unionid = r.unionid;
               wx.request({
                 url: app.url + 'login/index',
                 data: {
-                  unionid: 'runionid'
+                  unionid: r.unionid
                 },
                 header: {
                   'content-type': 'application/json' // 默认值
@@ -81,7 +83,7 @@ Page({
                             payIn: '#17b3ec',
                             cur: 0,
                             bef: 0,
-                            payC: '缴费记录',
+                            payC: '费用明细',
                             sumMoney: 0
                           })
                         } else {
@@ -94,7 +96,7 @@ Page({
                                 sumMoney: amount,
                                 cur: r.data.month,
                                 bef: (amount - r.data.month).toFixed(2),
-                                payC: '我要缴费',
+                                payC: '立即缴费',
                                 payIn: '#FF4500'
                               })
                             }

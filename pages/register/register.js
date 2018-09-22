@@ -7,8 +7,8 @@ Page({
    */
   data: {
     tot_company: '',
-    tot_companys: ["广西裕达集团物业服务有限公司"],
-    t_company: 0,
+    tot_companys: '',
+    t_company: '',
 
     companys: '',
     comm: '',
@@ -60,31 +60,51 @@ Page({
     //     }
     //   }
     // })
-
-    wx.request({      
-      url: app.url+'login/companys?company=1',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-       
-        var d = res.data;
-
+    wx.request({
+      url: app.url +'login/company',
+      data:{
+        yuda:''
+      },success: function(res){
+        var c = res.data;
         that.setData({
-          'comm': d.companys,
-          'companys': d.name
-        });
-       
+          'tot_company': c.name,
+          'tot_companys': c.company
+        })
       }
-
     })
+
+    
     // wx.request({
     //   url: ''
     // })
   },
 
   bindCompanyChange:function(e){
-    
+    var that = this;
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
+    var d = e.detail.value
+    var p = this.data.tot_companys[d].id
+    // console.log(d);
+    that.setData({
+      't_company': d
+    })
+    wx.request({
+      url: app.url + 'login/companys?company='+p,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+
+        var d = res.data;
+
+        that.setData({
+          'comm': d.companys,
+          'companys': d.name
+        });
+
+      }
+
+    })
   },
   bindCompanysChange: function (e) {
     var that = this;
@@ -272,7 +292,7 @@ Page({
           app.registerNeed.name = name.test
           if(res.data == 1){
             wx.reLaunch({
-                url: '../../pages/message/message'
+                url: '../../pages/message/message?room='+roomId+'&gender='+gender.test+'&name='+name.test
             })   
           }else if(res.data == ''){
             wx.showToast({
