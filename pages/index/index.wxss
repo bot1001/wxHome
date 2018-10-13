@@ -12,6 +12,10 @@
   width: 32px;
   height: 32px;
 }
+.slide-image{
+  height: 100%;
+  width: 100%;
+}
 .notice-icon{
   position: relative;
   border-bottom: 1rpx solid rgba(164,207,238,.5);

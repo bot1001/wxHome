@@ -1,5 +1,5 @@
 <view class="complaint-content pay-bottom" wx:if="{{payDetail}}">
-  <view class="cellInfo">{{userInfo.community}} {{userInfo.unit}} {{userInfo.room}}</view>
+  <view class="cellInfo">{{userInfo.community}} {{userInfo.building}} {{userInfo.number}} {{userInfo.room}}</view>
   <view wx:for="{{payDetail}}" wx:for-index="id" wx:for-item="item" class="wrapper" style="background: {{item.bgcolor}}">
     <view>
       <text class="payContent">{{item.year}}-{{item.month}}

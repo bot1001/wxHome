@@ -50,7 +50,10 @@ App({
     registerNeed:{},
     sum: {},
     openid:'',
-    unionid:''
+    unionid:'',
+    signal :0,
+    realestateArr:'',
+    houseInfo:''
     // notice:'',
     // more: true
   },

@@ -1,0 +1,6 @@
+<view class="delbox">
+  <view wx:for="{{house}}" wx:for-item="item" wx:for-index="index" class="houseList" bindtap='delhouse' data-index="{{index}}" data-content="{{item}}">
+    {{item}}
+  </view>
+</view>
+

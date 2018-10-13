@@ -1,28 +1,28 @@
 /* pages/myData/myData.wxss */
 .myDataWrapper{
-  padding: 20rpx;
-  font-size: 40rpx;
+  padding: 10rpx;
+  height: 100%;
+  box-sizing:border-box;
+  font-size: 34rpx;
 }
 .myDataTitle{
-  background: #333;
+  background: #666666;
   color: #fff;
   text-align: center;
 }
 .myDatainput{
-  border: 1px solid #333;
-  border-bottom-right-radius: 8rpx;
-  border-bottom-left-radius: 8rpx;
+  /* border-bottom-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx; */
   text-align: center;
   padding: 20rpx 0;
-  margin-bottom: 20rpx;
   color: #333;
-  min-height: 110rpx
+  min-height: 110rpx;
+  line-height: 110rpx;
 }
 .userinfo-avatar{
   width:128rpx;
   height:128rpx;
   margin:20rpx;
-  border-radius:50%;
 }
 .userinfo{
   display:flex;
@@ -30,12 +30,39 @@
   align-items:center;
   margin-bottom: 20rpx;
 }
+.line{
+  border: 1rpx solid #666666;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
 .userinfo-nickname{
   color: #aaa;
 }
+.l{
+  margin-right: 10rpx;
+  border: 1rpx solid #2c8692;
+  border-radius:10rpx;
+}
+.r{
+  border: 1rpx solid #666666;
+  border-radius:10rpx;
+}
 .flexInfo{
   display: flex;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.flexInfot{
+  display: flex;
+  border: 1px solid #666666;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
 }
 .locaInfo{
   flex: 1;
+}
+.btn{
+  background: #1AAD19;
+  width: 40%;
+  color: #fff;
 }

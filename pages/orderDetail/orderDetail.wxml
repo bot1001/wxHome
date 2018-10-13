@@ -1,0 +1,64 @@
+<view class="orderWrepper">
+  <view class="flexbox">
+    <view class="flexl">房屋</view>
+    <view class="flexr">{{orderInfo.address}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">订单号</view>
+    <view class="flexr">{{orderInfo.order_id}}</view>
+  </view>
+  <view class="flexbox" wx:if="{{orderInfo.number}}">
+    <view class="flexl">支付单号</view>
+    <view class="flexr">{{orderInfo.number}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">金额</view>
+    <view class="flexr">{{orderInfo.amount}}</view>
+  </view>
+  <view class="flexbox" wx:if="{{orderInfo.number}}">
+    <view class="flexl">支付方式</view>
+    <view class="flexr">{{orderInfo.gatetype}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">状态</view>
+    <view class="flexr">{{orderInfo.sta}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">描述</view>
+    <view class="flexr">{{orderInfo.description}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">支付人</view>
+    <view class="flexr">{{orderInfo.name}}</view>
+  </view>
+  <view class="flexbox">
+    <view class="flexl">创建日期</view>
+    <view class="flexr">{{orderInfo.create_time}}</view>
+  </view>
+  <view class="flexbox" wx:if="{{orderInfo.number}}">
+    <view class="flexl">支付日期</view>
+    <view class="flexr">{{orderInfo.payment_time}}</view>
+  </view>
+  <view class="null"></view>
+  <view wx:for="{{invoice}}" wx:for-index="id" wx:for-item="item" class="pay-bottom">
+    <view class='order{{item.status}}'>
+      <view class="list">
+        <text class="payContent">{{item.year}}-{{item.month}} </text>
+        <view class="payProject payAmount">{{item.description}}</view>
+      </view>
+      <view class="paystate">
+        <view class="time">
+          <text class='time{{item.status}}'>{{item.amount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="payWrapper" wx:if="{{!orderInfo.number}}">
+    <view class="payMoney">总计支付：
+      <text class="amount">{{orderInfo.amount
+}}</text>
+    </view>
+    <view class="payBtn" bindtap="payBtn">缴费</view>
+  </view>
+</view>

@@ -17,18 +17,10 @@ Page({
     var that = this;
     var account_Id = app.account_id;
     var userInfo = app.userInfo;
-    // var account_id = wx.getStorageSync("accountId");
-    // var userInfo = wx.getStorageSync('userInfo');
-    // const complaint1 = wx.getStorageSync('complaint');
-    // if (complaint1 == ''){
+    
       wx.showLoading({
         title: '加载中'
       })
-    //   this.loadInfo();
-    // }else{
-    //   this.setData({ dataInfo: complaint1 });
-    // }
-   
     // console.log(userInfo);
     wx.request({
       url: app.url + 'ticket/index',
@@ -87,7 +79,7 @@ Page({
           
           that.setData({
             dataInfo: dataInfo,
-            userInfo: userInfo
+            userInfo: userInfo[app.signal]
           })
           wx.setStorageSync("dataInfo", dataInfo);
           wx.hideLoading();
@@ -145,18 +137,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  loadInfo: function(){
-    // var page = this;
-    // const complaint = [
-    //   { "id": "201805200520", "state": "待接单", "content":"我一年才回来住两三次，每次就两三天，物业费、公摊水电费一分不少，为何还要我办啥停车月卡啊？ 次卡行不。","type":"投诉","time":"2018/08/24 05:20","people":"方家文"},
-    //   {
-    //     "id": "201805200521", "state": "待接单", "content": "大热天的，老是停水，想洗个澡都不行。", "type": "建议", "time": "2018/05/20 05:21", "people": "方家文"
-    //   }
-    // ];
-    // page.setData({ dataInfo: complaint });
-    // wx.setStorageSync('complaint', complaint);
-    
-    
   }
 })

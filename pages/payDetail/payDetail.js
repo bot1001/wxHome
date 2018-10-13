@@ -23,11 +23,7 @@ Page({
     wx.showLoading({
       title: that.data.text,
     })
-    
-    // let payIndex = wx.getStorageSync('realestate_id');
     let page = app.page;
-    // let sumMoney = that.data.sumMoney;
-  //  var realestate_id = wx.getStorageSync('realestate_id');
     var realestate_id = app.realestate_id;
     // 动态设置导航条标题
     wx.setNavigationBarTitle({
@@ -100,7 +96,7 @@ Page({
         wx.setStorageSync('payInfo', payContent);
         wx.setStorageSync('page', page);
         // var userInfo = wx.getStorageSync('userInfo');
-        var userInfo = app.userInfo;
+        var userInfo = app.userInfo[app.signal];
         that.setData({
           payDetail: info.data,
           userInfo: userInfo
@@ -210,23 +206,23 @@ Page({
               // payContent1[i].invoice_status = '欠费';
               // payContent1[i].color = 'red';
               payContent1[i].color = '#fd612b';
-              payContent1[i].bgcolor = '#FFC8B4';
+              payContent1[i].bgcolor = 'rgba(255, 200, 180, 0.452)';
 
               // sumMoney += Number(payContent1[i].invoice_amount);
             } else if (payContent1[i].invoice_status == 3) {
               // payContent1[i].invoice_status = '刷卡';
               payContent1[i].color = '#333';
-              payContent1[i].bgcolor = '#BBFFEE';
+              payContent1[i].bgcolor = 'rgba(187, 255, 238, 0.534)';
               
             } else if (payContent1[i].invoice_status == 2) {
               // payContent[i].invoice_status = '微信';
               payContent1[i].color = '#333';
-              payContent1[i].bgcolor = '#CCFF99';
+              payContent1[i].bgcolor = 'rgba(204, 255, 153, 0.473)';
             
             } else if (payContent1[i].invoice_status == 6) {
               // payContent[i].invoice_status = '现金';
               payContent1[i].color = '#333';
-              payContent1[i].bgcolor = '#FFFFBB';
+              payContent1[i].bgcolor = 'rgba(255, 255, 187, 0.445)';
              
             } else if (payContent1[i].invoice_status == 8) {
               // payContent[i].invoice_status = '优惠';
@@ -236,7 +232,7 @@ Page({
             }else{
               // payContent1[i].invoice_status = '已缴费';
               payContent1[i].color = '#333';
-              payContent1[i].bgcolor = '#AAAAAA';
+              payContent1[i].bgcolor = 'rgba(223, 222, 222, 0.692)';
              
             }
           }

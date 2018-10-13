@@ -19,7 +19,7 @@ Page({
     })
     var that = this;
     // var userInfo = wx.getStorageSync('userInfo');
-   var userInfo = app.userInfo;
+   var userInfo = app.userInfo[app.signal];
     wx.request({
       url: app.url+'news/home',
       data:{

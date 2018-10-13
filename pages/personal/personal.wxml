@@ -14,30 +14,35 @@
       </view>
     </navigator>
   </view>
-  <view class="houseInfo">
-    <view class="info-content">
-      <view class="content-header">小区</view>
-      <view class="content-text">{{userInfo.community}}</view>
+  <picker bindchange="bindHouseChange" value="{{h}}" range="{{houseInfo}}">
+    <view class="houseInfo">
+      <view class="info-content">
+        <view class="content-header">小区</view>
+        <view class="content-text">{{userInfo.community}}</view>
+      </view>
+      <view class="info-content">
+        <view class="content-header">楼宇</view>
+        <view class="content-text">{{userInfo.building}}</view>
+      </view>
+      <view class="info-content">
+        <view class="content-header">单元</view>
+        <view class="content-text">{{userInfo.number}}</view>
+      </view>
+      <view class="info-content">
+        <view class="content-header">房号</view>
+        <view class="content-text">{{userInfo.room}}</view>
+      </view>
     </view>
-    <view class="info-content">
-      <view class="content-header">楼宇</view>
-      <view class="content-text">{{userInfo.building}}</view>
-    </view>
-    <view class="info-content">
-      <view class="content-header">单元</view>
-      <view class="content-text">{{userInfo.unit}}</view>
-    </view>
-    <view class="info-content">
-      <view class="content-header">房号</view>
-      <view class="content-text">{{userInfo.room}}</view>
-    </view>
-  </view>
+  </picker>
   <view class="someOperation">
-    <view class="myAdvise">我的投诉/建议</view>
-    <view class="changeNumber">更换手机号码</view>
-    <view class="changePassword">更换密码</view>
+    <navigator url="../relation/relation">
+      <view class="rela">关联房屋</view>
+    </navigator>
+    <navigator url="../delrelation/delrelation">
+      <view class="delrela">解除关联</view>
+    </navigator>
+    <!-- <view class="changeNumber">更换手机号码</view>
+    <view class="changePassword">更换密码</view> -->
     <!-- <view class="clear" bindtap='clearData'>清理缓存</view> -->
   </view>
-  
-
 </view>

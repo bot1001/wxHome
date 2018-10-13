@@ -12,7 +12,10 @@
     "pages/interNew/interNew",
     "pages/noticeList/noticeList",
     "pages/noticeDetail/noticeDetail",
-    "pages/remind/remind"
+    "pages/remind/remind",
+    "pages/relation/relation",
+    "pages/delrelation/delrelation",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

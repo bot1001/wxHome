@@ -6,7 +6,7 @@
       </view>
   </picker>
 
-  <picker bindchange="bindCompanysChange" value="{{n_company}}" range="{{companys}}">
+  <picker bindchange="bindCompanysChange" value="{{c_company}}" range="{{companys}}">
       <view class="picker">
         <view>分公司</view><view class="companys">{{companys[c_company]}}</view>
       </view>
@@ -55,7 +55,7 @@
     </view>
   </picker> -->
   <form bindsubmit="formSubmit" bindreset="formReset">
-    <view>预留业主姓名</view><input type="text" class="name" name="name" confirm-type="send"/>
+    <view>房屋预留姓名</view><input type="text" class="name" name="name" confirm-type="send"/>
     <!-- <view>设置密码</view><input type="text" class="passWord" name="passWord" confirm-type="send"/> -->
     <view>预留手机号</view><input class="phone" type="number" name="phone"/>
     <button type="primary" form-type="submit" class="btnb">验证身份</button>

@@ -1,12 +1,15 @@
 /* pages/noticeDetail/noticeDetail.wxss */
 .box{
   padding: 10rpx;
+  height: 100%;
+  background: #f4f5f6;
+  box-sizing: border-box;
 }
 .title{
   text-align: center;
-  font-size: 40rpx;
-  margin-bottom: 10rpx;
+  font-size: 34rpx;
   font-weight: 600;
+  margin-bottom: 10rpx;
 }
 /* .excerpt{
   font-size: 32rpx;
@@ -17,6 +20,7 @@
   font-size:34rpx;
   padding:10rpx;
   border-radius:10rpx;
+  background:#e7e8e9;
 }
 .time{
   text-align: right;

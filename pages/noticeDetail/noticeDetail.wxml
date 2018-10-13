@@ -1,6 +1,6 @@
 <!--pages/noticeDetail/noticeDetail.wxml-->
 <view class="box">
-  <view class="title">{{n.title}}</view>
+  <!-- <view class="title">{{n.title}}</view> -->
   <!-- <view class="excerpt" wx:if="{{n.excerpt}}">摘要：{{n.excerpt}}</view> -->
   <view class="content">{{n.content}}</view>
   <view class="time">{{n.time}}</view>

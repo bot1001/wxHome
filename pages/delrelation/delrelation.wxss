@@ -1,0 +1,20 @@
+/* pages/delrelation/delrelation.wxss */
+page{
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.delbox{
+  border-radius: 10rpx;
+}
+.houseList{
+  font-size: 36rpx;
+  background: rgba(25, 173, 25, 0.397);
+  padding: 20rpx 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.del{
+  float: right;
+  color: rgb(255, 94, 0);
+}

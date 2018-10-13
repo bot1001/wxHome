@@ -1,3 +1,6 @@
+page{
+  height: 100%;
+}
 .cellInfo{
   text-align:right;
   padding:10px;

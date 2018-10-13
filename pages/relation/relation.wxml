@@ -1,0 +1,45 @@
+<view class="section registerWrapper">
+  <picker bindchange="bindCompanyChange" value="{{t_company}}" range="{{tot_company}}">
+      <view class="picker">
+        <view>总公司</view><view class="companys">{{tot_company[t_company]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindCompanysChange" value="{{c_company}}" range="{{companys}}">
+      <view class="picker">
+        <view>分公司</view><view class="companys">{{companys[c_company]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindCommunityChange" value="{{n_community}}" range="{{community}}">
+      <view class="picker">
+        <view>小区</view><view class="companys">{{community[n_community]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindBuildingChange" value="{{buildingListIndex}}" range="{{building}}">
+      <view class="picker">
+        <view>楼宇</view><view class="companys">{{building[n_building]}}</view>
+      </view>
+  </picker>
+
+   <picker bindchange="bindUnitChange" value="{{unitListIndex}}" range="{{unit}}">
+      <view class="picker">
+        <view>单元</view><view class="companys">{{unit[n_unit]}}</view>
+      </view>
+  </picker>
+
+  <picker bindchange="bindRoomChange" value="{{roomListIndex}}" range="{{room}}">
+      <view class="picker">
+        <view>房号</view><view class="companys">{{room[n_room]}}</view>
+      </view>
+  </picker>
+ 
+    <!-- <view class="btnb" bindtap="relation">确认关联</view> -->
+  <form bindsubmit="relation">
+    <view>房屋预留姓名</view><input type="text" class="name" name="name" confirm-type="send"/>
+    <!-- <view>设置密码</view><input type="text" class="passWord" name="passWord" confirm-type="send"/> -->
+    <view>预留手机号</view><input class="phone" type="number" name="phone"/>
+    <button type="primary" form-type="submit" class="btnb">确认关联</button>
+  </form>
+</view>

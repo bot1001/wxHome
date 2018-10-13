@@ -1,22 +1,15 @@
 //index.js
 //获取应用实例
 const app = getApp().globalData
-var userInfo = {}
 Page({
   data: {
-    imgUrls: [
-      'https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462475058.jpg',
-      'https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2472784892.jpg',
-      'https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2479605659.jpg',
-      'https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2459944375.jpg',
-      'https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2461834877.jpg'
-    ],
+    imgUrls:'',
     show:app.show,
     indicatorDots:true,
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    userInfo: app.userInfo,
+    userInfo: '',
     notice: app.notice,
     // more: app.more,
     loading: true,
@@ -61,20 +54,21 @@ Page({
                 },
                 success: function (res) {
                   var r = res.data;
+                  // console.log(r);
                   if (!r) {
                     wx.reLaunch({
                     url: '../../pages/register/register', //转条到注册页面
                     })
                   } else {
                     app.account_id = r.user.account_id;
-                    app.realestate_id = r.user.realestate_id;
+                    app.realestate_id = r.address[app.signal].realestate;
                     //如果登陆成功则设置首页为可显示状态
 
                     //欠费提示
                     wx.request({
                       url: app.url + 'invoice/sum',
                       data: {
-                        realestate_id: r.user.realestate_id
+                        realestate_id: r.address[app.signal].realestate
                       }, success: function (res) {
                         var amount = res.data.amount;
                         // console.log(res);
@@ -90,7 +84,7 @@ Page({
                           wx.request({
                             url: app.url + 'invoice/invoice',
                             data: {
-                              realestate: r.user.realestate_id
+                              realestate: r.address[app.signal].realestate
                             }, success: function (r) {
                               that.setData({
                                 sumMoney: amount,
@@ -108,25 +102,60 @@ Page({
                       }
                     })
 
-                    var re = res.data.address[0];
-                    var u = res.data.user
-
-                    userInfo.community = re.community;
-                    userInfo.building = re.building;
-                    userInfo.unit = re.number;
-                    userInfo.room = re.room;
-                    userInfo.phone = u.mobile_phone;
-                    userInfo.name = u.real_name;
+                    // var re = res.data.address[app.signal];
+                    var userInfo = res.data.address;
+                    var u = res.data.user;
+                    // console.log(userInfo);
+                    var realestateArr = [];
+                    // for (var y = 0; y < userInfo.length; y++){
+                    //   realestateArr.push(userInfo[y].realestate);
+                    // }
+                    for (var i = 0; i < userInfo.length;i++){
+                      realestateArr.push(userInfo[i].realestate);
+                      // userInfo[i].community = address[i].community;
+                      // userInfo[i].building = address[i].building;
+                      // userInfo[i].unit = address[i].number;
+                      // userInfo[i].room = address[i].room;
+                      // userInfo[i].address = address;
+                      // userInfo[i].houseInfo = that.fn(userInfo);
+                      // userInfo[i].houseArr = that.fnk(userInfo);
+                      userInfo[i].phone = u.mobile_phone;
+                      userInfo[i].name = u.nickname;
+                      userInfo[i].gender = u.gender;
+                      userInfo[i].account = u.account_id;
+                      userInfo[i].realname = u.real_name;
+                      // userInfo[i].realestateArr = realestateArr;
+                    }
+                  //  console.log(userInfo);
+                    app.realestateArr = realestateArr;
                     app.userInfo = userInfo;
+                    // console.log(userInfo);
+                    app.houseInfo = that.fn(userInfo);
                     that.setData({
-                      userInfo: userInfo,
+                      userInfo: userInfo[app.signal],
                       loading: false,
-                      realestate_id: res.data.user.realestate_id
+                      realestate_id: r.address[app.signal].realestate
                     })
-
+                    wx.request({
+                      url: app.url + 'advertise/index',
+                      data:{
+                        community: userInfo[app.signal].community
+                      },
+                      success:function(res){
+                        var imgData = res.data;
+                        var imgUrls = [];
+                        for (let i = 0; i < imgData.length;i++){
+                          imgUrls.push(imgData[i].poster);
+                        }
+                        that.setData({
+                          imgUrls: imgUrls
+                        })
+                      }
+                    })
+                    // console.log(userInfo.houseInfo);
                     //公告栏首页
                     wx.request({
-                      url: app.url + 'news/home?community=' + userInfo.community,
+                      url: app.url + 'news/home?community=' + userInfo[app.signal].community,
                       // url: app.url + 'news/home?community=金碧天誉',
                       success: function (res) {
                         // console.log(res);
@@ -147,7 +176,7 @@ Page({
                     wx.request({
                       url: app.url + 'news/home',
                       data: {
-                        community: userInfo.community,
+                        community: userInfo[app.signal].community,
                         // community:'金碧天誉',
                         page: 1
                       }, success: function (res) {
@@ -184,5 +213,22 @@ Page({
   },
   onShow:function(){
     this.onLoad();
+  },
+  fn:function(a){
+      let ai = [];
+      for (let i = 0; i < a.length; i++) {
+        let pi = a[i].community + ' ' + a[i].building + ' ' + a[i].number + ' ' + a[i].room;
+        ai.push(pi);
+      }
+      return ai;
   }
+  // fnk:function(a){
+  //   let ai = [];
+  //   for (let i = 0; i < a.length; i++) {
+  //     let pi = {};
+  //      pi.message = a[i].community + ' ' + a[i].building + ' ' + a[i].number + ' ' + a[i].room;
+  //     ai.push(pi);
+  //   }
+  //   return ai;
+  // }
 })

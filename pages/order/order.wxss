@@ -62,7 +62,10 @@
 }
 .pay-bottom{
   /* padding: 10rpx; */
-  margin-bottom:8rpx
+  margin-top:8rpx;
+  padding:0 10rpx;
+  font-size:32rpx;
+
 }
 
 .order1{

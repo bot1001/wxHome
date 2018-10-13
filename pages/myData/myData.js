@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:'',
     region: ['广西壮族自治区', '来宾市', '兴宾区'],
     customItem: '全部',
-    userInfo: {},
+    gender:['男','女'],
+    userInfo: '',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
@@ -20,7 +20,7 @@ Page({
    */
   onLoad: function (options) {
     // var userInfo = wx.getStorageSync('userInfo');
-    var userInfo = app.userInfo;
+    var userInfo = app.userInfo[app.signal];
     this.setData({
       userInfo: userInfo
     });
@@ -111,5 +111,62 @@ Page({
     this.setData({
       region: e.detail.value
     })
+  },
+  formSubmit:function(e){
+    var that = this;
+    var val = e.detail.value;
+    var gender = '';
+    var userInfo = app.userInfo;
+    if (val.gender == '男'){
+      gender = 1;
+    } else if (val.gender == '女'){
+      gender = 2;
+    }else{
+      wx.showToast({
+        title: '请输入合法信息',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
+    var user = that.data.userInfo;
+    // console.log(user);
+    if (val.name.replace(/(^\s*)|(\s*$)/g, '') != '' && val.gender.replace(/(^\s*)|(\s*$)/g, '') != '' && val.realname.replace(/(^\s*)|(\s*$)/g, '') != ''){
+      wx.request({
+        url: app.url + 'personal/update',
+        data:{
+          province:that.data.region[0],
+          city: that.data.region[1],
+          area: that.data.region[2],
+          account: user.account,
+          gender: gender,
+          face:'',
+          name: val.realname,
+          nickname: val.name
+        },success:function(res){
+          // console.log(res);
+          if(res.data == 1){
+            wx.showToast({
+              title: '修改成功',
+              icon: 'none',
+              duration: 2000
+            })
+            for(let i=0;i<userInfo.length;i++){
+              userInfo[i].name = val.name;
+              userInfo[i].gender = parseInt(that.data.gender.indexOf(val.gender)) + 1;
+              userInfo[i].realname = val.realname;
+            }
+            app.userInfo = userInfo;
+          }
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '请输入合法信息',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    // console.log(e.detail.value);
   }
 })

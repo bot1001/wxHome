@@ -29,41 +29,43 @@ Page({
       },
       success:function (res){
         var orderInfo = res.data;
+        console.log(orderInfo);
         if (orderInfo == ''){
           that.setData({
             show: true
           })
         }else{         
-          for (var i = 0; i < orderInfo.length; i++) {
-            if (orderInfo[i].status == "2") {
-              orderInfo[i].time = orderInfo[i].payment_time
-            } else {
-              orderInfo[i].time = orderInfo[i].create_time
-            }
+          // for (var i = 0; i < orderInfo.length; i++) {
+          //   if (orderInfo[i].status == "2") {
+          //     orderInfo[i].time = orderInfo[i].payment_time
+          //   } else {
+          //     orderInfo[i].time = orderInfo[i].create_time
+          //   }
 
-            switch (orderInfo[i].status) {
-              case "1":
-                orderInfo[i].sta = "未支付";
-                break;
-              case "2":
-                orderInfo[i].sta = "已支付";
-                break;
-              case "3":
-                orderInfo[i].sta = "已取消";
-                break;
-              case "4":
-                orderInfo[i].sta = "送货中";
-                break;
-              case "5":
-                orderInfo[i].sta = "已签收";
-                break;
-            }
-          }
+          //   switch (orderInfo[i].status) {
+          //     case "1":
+          //       orderInfo[i].sta = "未支付";
+          //       break;
+          //     case "2":
+          //       orderInfo[i].sta = "已支付";
+          //       break;
+          //     case "3":
+          //       orderInfo[i].sta = "已取消";
+          //       break;
+          //     case "4":
+          //       orderInfo[i].sta = "送货中";
+          //       break;
+          //     case "5":
+          //       orderInfo[i].sta = "已签收";
+          //       break;
+          //   }
+          // }
           // console.log(res.data);
           that.setData({
             orderInfo: res.data,
             // order_amount: order_amount
           })
+          // console.log(that.data.orderInfo);
           wx.setStorageSync('oc', res.data)
         }
       
@@ -136,6 +138,7 @@ Page({
       },
       success: function (res) {
         var orderInfo = res.data;
+        console.log(orderInfo);
         if (orderInfo == '') {
           that.setData({
             text: '到底了..'

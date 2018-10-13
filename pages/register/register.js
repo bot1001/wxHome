@@ -1,7 +1,6 @@
 // pages/register/register.js
 const app = getApp().globalData
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -35,7 +34,7 @@ Page({
     // region: ['广西壮族自治区', '来宾市', '兴宾区'],
     customItem: '全部',
     gender:['男','女'],
-    gen: '',
+    // gen: '',
     genderListIndex:'',
     cityInfo:''
   },
@@ -45,7 +44,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    app.timeS = that.timeStamp();
+    app.timeS = '';
     // console.log(timeStamp);
     // wx.getSetting({
     //   success: function (res) {
@@ -94,9 +93,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-
         var d = res.data;
-
         that.setData({
           'comm': d.companys,
           'companys': d.name
@@ -242,10 +239,12 @@ Page({
   bindGenderChange: function (e) {
     var that = this;
     that.setData({
-      'gen': e.detail.value+1, //1=>男,2=>女
-      'genderListIndex': e.detail.value
+      // 'gen': e.detail.value+1, 
+      'genderListIndex': e.detail.value //1=>男,2=>女
     })
+    // console.log(that.data.genderListIndex);
   },
+  //获取设备当前时间戳
   timeStamp: function () {
     return parseInt(new Date().getTime() / 1000) + '';
   },
@@ -255,7 +254,7 @@ Page({
     var name = { "test": e.detail.value.name };
     var phone = { "test": e.detail.value.phone };
     var roomId = this.data.roomId ;
-    var gender = { "test": this.data.genderListIndex };
+    var gender = { "test": parseInt(this.data.genderListIndex) + 1 };
     var region = {"test":this.data.region};
     
     if (name.test == ""){

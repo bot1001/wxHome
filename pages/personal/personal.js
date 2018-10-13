@@ -6,7 +6,9 @@ Page({
    */
   data: {
    userInfo:'',
-    configs: {}
+    configs: {},
+    h:'',
+    houseInfo:''
   },
 
   /**
@@ -18,8 +20,10 @@ Page({
     var userInfo = app.userInfo;
     this.setData({ 
       configs: configs,
-      userInfo: userInfo
+      userInfo: userInfo[app.signal],
+      houseInfo: app.houseInfo
      });
+    //  console.log(userInfo);
   },
 
   /**
@@ -33,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**
@@ -76,6 +80,26 @@ Page({
       title: '清理成功',
       icon: 'none',
       duration: 2000
+    })
+  },
+  bindHouseChange:function(e){
+    var that = this;
+    var h = e.detail.value;
+    // var nowuser = that.data.userInfo;
+    // var befuser = nowuser.address;
+    // nowuser.community = befuser[h].community;
+    // nowuser.building = befuser[h].building;
+    // nowuser.unit = befuser[h].number;
+    // nowuser.room = befuser[h].room;
+    // that.setData({
+    //   userInfo: nowuser,
+    //   houseIndex: h
+    // })
+    // app.userInfo = nowuser;
+    app.signal = h;
+    that.setData({
+      userInfo: app.userInfo[h],
+      h:h
     })
   }
 })

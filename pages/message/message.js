@@ -10,7 +10,6 @@ Page({
   data: {
     nick:'',
     phone:'',
-    code :'1',
     vcode: '',
     // currentTime: 61,
     time: '获取验证码',
@@ -101,7 +100,6 @@ Page({
         duration: 2000
       })
     }else{
-      
         var messTime = app.timeS;
         var phone = that.data.phone;
         wx.request({
@@ -121,7 +119,6 @@ Page({
               //发送成功执行操作
               that.getCode();
               that.setData({
-                code: '1',
                 vcode: res.data,
                 disabled: true
               })
@@ -161,7 +158,7 @@ Page({
       // console.log(message);
       // console.log(that.data.vcode);
       // console.log('form发生了submit事件，携带数据为：', e)
-      if (that.data.code == '1' && that.data.vcode == message){
+      if (that.data.vcode.code == message){
         wx.request({
           url: app.url+'register/new',
           data:{
