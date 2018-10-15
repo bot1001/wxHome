@@ -1,29 +1,30 @@
 .orderWrepper{
-  padding:10rpx 10rpx 100rpx 10rpx;
-  background: rgb(240, 249, 250);
-  min-height: 100%;
-  font-size: 34rpx;
-  box-sizing: border-box;
+  width: 98%;
+  margin: auto;
+  position: relative;
+  top: 3px;
 }
+
 .flexbox{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
- 
+  display:flex;   
+  margin-bottom: 3px;
 }
+
 .flexl{
-  /* background: rgb(224, 224, 224); */
+  min-width: 25%;
+  text-align: right;
    padding: 5rpx;
+   border-radius: 5px;
+   background: rgba(222, 223, 223, 0.807);
    flex:1;
-   text-align: center;
-   background: rgb(222, 223, 223);
 }
 .flexr{
   /* background: #fff; */
    padding: 5rpx;
    flex: 4;
-   text-align: center;
-    background: #fff;
+   text-align: left;
+   background: rgb(222, 223, 223);
+   border-radius: 5px;
 }
 .pay-bottom{
   margin-bottom:15rpx;

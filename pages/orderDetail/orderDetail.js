@@ -27,16 +27,28 @@ Page({
         var status = order.status;
         switch (gateway){
           case "0":
-          order.gatetype = "欠费";
-          break;
-          case "3":
-            order.gatetype = "刷卡";
+            order.gatetype = "欠费";
+            break;
+          case "1":
+            order.gatetype = "支付宝";
             break;
           case "2":
             order.gatetype = "微信";
             break;
+          case "3":
+            order.gatetype = "刷卡";
+            break;
+          case "4":
+            order.gatetype = "银行";
+            break;
+          case "5":
+            order.gatetype = "政府";
+            break;
           case "6":
             order.gatetype = "现金";
+            break;
+          case "6":
+            order.gatetype = "建行";
             break;
           case "8":
             order.gatetype = "优惠";
