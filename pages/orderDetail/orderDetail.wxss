@@ -29,16 +29,13 @@
    border-radius: 5px;
 }
 .pay-bottom{
-  margin-bottom:15rpx;
+  margin-bottom:5rpx;
   padding:10rpx;
   font-size:32rpx;
   background: rgb(236, 236, 236);
   border-radius: 10rpx;
 }
-.list{
-  width: 50%;
-  flex: 1;
-}
+
 .payAmount{
   margin-top: 30rpx;
 }
