@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderInfo:''
+    orderInfo:'',
+    status: ''
   },
 
   /**
@@ -78,6 +79,7 @@ Page({
         // }
         that.setData({
           orderInfo: order,
+          status: status,
           invoice: invoice
         })
         console.log(that.data.orderInfo);
