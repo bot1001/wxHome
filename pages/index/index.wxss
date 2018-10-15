@@ -124,7 +124,16 @@
   background: #17b3ec;
   padding: 10rpx;
   color: #fff;
+  min-width:150rpx;
+  text-align: right;
 }
+
+#info-header{
+  background: #17b3ec;
+  padding: 10rpx;
+  color: #fff;
+}
+
 .info-foot{
   padding: 10rpx;
   color: #333;

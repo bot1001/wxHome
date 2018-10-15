@@ -12,9 +12,23 @@ page{
   padding: 20rpx 10rpx;
   margin-bottom: 10rpx;
   border-radius: 10rpx;
-  text-align: center;
 }
 .del{
   float: right;
   color: rgb(255, 94, 0);
+}
+
+.add{
+  position: fixed;
+  bottom: 20rpx;
+  left: 40%;
+  height: 90rpx;
+  width: 20%;
+  background: rgb(187, 201, 60);
+  border-radius: 15rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 80rpx;
+  color: #fff;
 }

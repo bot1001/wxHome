@@ -1,4 +1,4 @@
-<view class="container-main">
+<view class="container-m">
   <view class="zw" wx:if="{{more}}">暂无更多内容</view>
   <block wx:for="{{noticeList}}">
     <navigator url="../../pages/noticeDetail/noticeDetail?id={{item.data.id}}" hover-class="navigator-hover">

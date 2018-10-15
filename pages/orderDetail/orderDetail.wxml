@@ -7,10 +7,7 @@
     <view class="flexl">订单号:</view>
     <view class="flexr">{{orderInfo.order_id}}</view>
   </view>
-  <view class="flexbox" wx:if="{{orderInfo.number}}">
-    <view class="flexl">支付单号:</view>
-    <view class="flexr">{{orderInfo.number}}</view>
-  </view>
+  
   <view class="flexbox">
     <view class="flexl">金额:</view>
     <view class="flexr">{{orderInfo.amount}}</view>
@@ -42,15 +39,15 @@
     <view class="flexr">{{orderInfo.payment_time}}</view>
   </view>
 
-  <view wx:for="{{invoice}}" wx:for-index="id" wx:for-item="item" class="pay-bottom">
-    <view class='order{{item.status}}'>
-      <view class="list">
-        <text class="payContent">{{item.year}}-{{item.month}} </text>
-        <view class="payProject payAmount">{{item.description}}</view>
-      </view>
-      <view class="paystate">
-        <view class="time">
-          <text class='time{{item.status}}'>{{item.amount}}</text>
+  <view id='all'>
+    <view class='all'>订单清单：</view>
+    <view wx:for="{{invoice}}" wx:for-index="id" wx:for-item="item" class="pay-bottom">
+      <view class='order{{item.status}}'>
+        <view class="list">
+          <text class="payContent">{{item.year}}-{{item.month}}-{{item.description}} </text>
+        </view>
+        <view class="paystate">
+            <text class='time{{item.status}}'>{{item.amount}}</text>
         </view>
       </view>
     </view>

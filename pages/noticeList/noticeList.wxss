@@ -2,7 +2,7 @@
   display: flex;
   justify-content:space-between;
 } */
-.container-main{
+.container-m{
   padding: 10rpx;
 }
 .notice_title{

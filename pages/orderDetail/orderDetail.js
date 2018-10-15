@@ -47,7 +47,7 @@ Page({
           case "6":
             order.gatetype = "现金";
             break;
-          case "6":
+          case "7":
             order.gatetype = "建行";
             break;
           case "8":

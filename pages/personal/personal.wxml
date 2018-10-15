@@ -14,6 +14,7 @@
       </view>
     </navigator>
   </view>
+
   <picker bindchange="bindHouseChange" value="{{h}}" range="{{houseInfo}}">
     <view class="houseInfo">
       <view class="info-content">
@@ -34,15 +35,54 @@
       </view>
     </view>
   </picker>
+
   <view class="someOperation">
-    <navigator url="../relation/relation">
-      <view class="rela">关联房屋</view>
-    </navigator>
+    <!-- <navigator url="../relation/relation">
+      <view class="list">
+        <text class='text'>关联房屋</text>
+      </view>
+    </navigator> -->
+
     <navigator url="../delrelation/delrelation">
-      <view class="delrela">解除关联</view>
+      <view class="list">
+        <text class='text'>我的房屋</text>
+      </view>
     </navigator>
-    <!-- <view class="changeNumber">更换手机号码</view>
-    <view class="changePassword">更换密码</view> -->
     <!-- <view class="clear" bindtap='clearData'>清理缓存</view> -->
+    <!-- <navigator>
+      <view class='list'>
+        <text class='text'>更换手机号码</text>
+      </view>
+    </navigator> -->
+
+    <navigator>
+      <view class='list'>
+        <text class='text'>更换密码</text>
+      </view>
+    </navigator>    
+
+    <navigator>
+      <view class='list'>
+        <text class='text'>操作指南</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class='list'>
+        <text class='text'>收费标准</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class='list'>
+        <text class='text'>设置</text>
+      </view>
+    </navigator>
+
+    <navigator>
+      <view class='list'>
+        <text class='text'>关于</text>
+      </view>
+    </navigator>
   </view>
 </view>

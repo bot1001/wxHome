@@ -4,3 +4,7 @@
   </view>
 </view>
 
+<navigator url="../relation/relation">
+  <view class='add'>+</view>
+</navigator>
+

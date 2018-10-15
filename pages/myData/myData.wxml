@@ -1,12 +1,10 @@
 <view class="myDataWrapper">
   <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
   <block> 
-  <view class="userinfo">
-     <!-- <image src="{{userInfo.avatarUrl}}" background-size="cover" class="userinfo-avatar"></image>
-    <text class='userinfo-nickname'>{{userInfo.nickName}}</text> -->
-    <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
-    <open-data type="userNickName" class='userinfo-nickname'></open-data>
-  </view>
+    <view class="userinfo">
+      <open-data style="border-radius: 50rpx" type="userAvatarUrl" class="userinfo-avatar"></open-data>
+      <open-data type="userNickName" class='userinfo-nickname'></open-data>
+    </view>
   </block>
   <!-- <input class="myDatainput" type="text" placeholder="昵称" confirm-type="done" value="{{value.nickname}}"></input> -->
   <form bindsubmit="formSubmit">
@@ -15,18 +13,17 @@
         <view class="myDataTitle">昵称</view>
         <input class="myDatainput" type="text" name="name" placeholder="昵称" confirm-type="done" value="{{userInfo.name}}"></input>
       </view>
+
+      <view class="l">
+        <view class="myDataTitle">姓名</view>
+        <input class="myDatainput" type="text" name="realname" placeholder="姓名" confirm-type="done" value="{{userInfo.realname}}"></input>
+      </view>           
+    
       <view class="r">
         <view class="myDataTitle">性别</view>
         <input class="myDatainput" type="text" placeholder="性别" name="gender" confirm-type="done" value="{{gender[userInfo.gender-1]}}"></input>
       </view>
-        
     </view>
-  
-    <view class="line">
-      <view class="myDataTitle">姓名</view>
-    <input class="myDatainput" type="text" name="realname" placeholder="姓名" confirm-type="done" value="{{userInfo.realname}}"></input>
-    </view>
-    
     <!-- <view class="myDataTitle">邮箱</view>
     <input class="myDatainput" type="text" placeholder="电子邮箱" confirm-type="done" value=""></input> -->
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
@@ -45,6 +42,6 @@
       </view>
     </view> 
     </picker>
-    <button formType="submit" class="btn">确认修改</button>
+    <button formType="submit" class="btn">提交</button>
   </form>
 </view>

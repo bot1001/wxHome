@@ -27,4 +27,6 @@
   font-size: 32rpx;
   margin-top: 10rpx;
   color: #333;
+  background:#e7e8e9a6;
+  border-radius:10rpx;
 }
