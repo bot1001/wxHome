@@ -37,7 +37,12 @@
     "borderStyle": "white",
     "backgroundColor": "#32cdad",
     "list": [
-      
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "购物车",
+        "iconPath": "images/shop-1.png",
+        "selectedIconPath": "images/shop-2.png"
+      },
       {
         "pagePath": "pages/index/index",
         "text": "首页",
