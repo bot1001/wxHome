@@ -33,9 +33,6 @@ Page({
 
     // region: ['广西壮族自治区', '来宾市', '兴宾区'],
     customItem: '全部',
-    gender:['男','女'],
-    // gen: '',
-    genderListIndex:'',
     cityInfo:''
   },
 
@@ -254,7 +251,7 @@ Page({
     var name = { "test": e.detail.value.name };
     var phone = { "test": e.detail.value.phone };
     var roomId = this.data.roomId ;
-    var gender = { "test": parseInt(this.data.genderListIndex) + 1 };
+    // var gender = { "test": parseInt(this.data.genderListIndex) + 1 };
     var region = {"test":this.data.region};
     
     if (name.test == ""){
@@ -287,11 +284,11 @@ Page({
           phone: phone.test
         },success:function(res){
           app.registerNeed.room = roomId;
-          app.registerNeed.gender = gender.test;
+          // app.registerNeed.gender = gender.test;
           app.registerNeed.name = name.test
           if(res.data == 1){
             wx.reLaunch({
-                url: '../../pages/message/message?room='+roomId+'&gender='+gender.test+'&name='+name.test
+                url: '../../pages/message/message?room='+roomId+'&name='+name.test
             })   
           }else if(res.data == ''){
             wx.showToast({

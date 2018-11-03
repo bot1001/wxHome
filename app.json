@@ -15,7 +15,15 @@
     "pages/remind/remind",
     "pages/relation/relation",
     "pages/delrelation/delrelation",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/passWord/passWord",
+    "pages/guidance/guidance",
+    "pages/registerMethod/registerMethod",
+    "pages/fastRegister/fastRegister",
+    "pages/fastRelation/fastRelation",
+    "pages/standard/standard",
+    "pages/fastRegisterIn/fastRegisterIn",
+    "pages/shop/shop"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,6 +37,7 @@
     "borderStyle": "white",
     "backgroundColor": "#32cdad",
     "list": [
+      
       {
         "pagePath": "pages/index/index",
         "text": "首页",

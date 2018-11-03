@@ -47,5 +47,8 @@ page{
   background: #33CCFF;
 }
 .submit{
+ background:#0fd0bd;
+  color:#fff;
+  margin-top:20rpx;
   width: 200rpx;
 }

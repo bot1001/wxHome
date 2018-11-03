@@ -35,12 +35,12 @@ page{
   background: #f4f5f6;
   height: 100%;
 }
-.submit{
+/* .submit{
  background:#0fd0bd;
   color:#fff;
   margin-top:20rpx;
   width:140rpx;
-}
+} */
 .interInput{
   padding: 10rpx;
   border-bottom: 1px solid #ecedee;

@@ -53,7 +53,8 @@ App({
     unionid:'',
     signal :0,
     realestateArr:'',
-    houseInfo:''
+    houseInfo:'',
+    fastRegist: 0
     // notice:'',
     // more: true
   },

@@ -1,0 +1,38 @@
+page{
+  height: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.tips{
+  border-radius: 10rpx;
+  text-align: center;
+  color: #666666;
+}
+.rmWrapper{
+  margin-top: 100rpx;
+}
+.modeWrapper{
+  margin: 100rpx auto 0 auto;
+  width: 300rpx;
+}
+.general{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 40rpx;
+  border: 1rpx solid #999999;
+  color: #666666;
+}
+.quick{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: rgb(16, 158, 64);
+  border-radius: 20rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  color: #fff;
+  font-size: 40rpx;
+}

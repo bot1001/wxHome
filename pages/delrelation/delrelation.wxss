@@ -5,19 +5,57 @@ page{
 }
 .delbox{
   border-radius: 10rpx;
+  height: 100%;
 }
 .houseList{
-  font-size: 36rpx;
-  background: rgba(25, 173, 25, 0.397);
+  font-size: 40rpx;
+  background: rgb(124, 211, 124);
   padding: 20rpx 10rpx;
   margin-bottom: 10rpx;
   border-radius: 10rpx;
+  position: relative;
 }
-.del{
-  float: right;
-  color: rgb(255, 94, 0);
+.box{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top: 10rpx;
+  font-size: 38rpx;
 }
-
+.title{
+  background: rgb(235, 235, 235);
+  border-radius: 10rpx;
+  width: 130rpx;
+  text-align: right;
+  flex: 1;
+  padding-right: 10rpx;
+  color: #666;
+}
+.content{
+  background: rgb(235, 235, 235);
+  border-radius: 10rpx;
+  text-align: left;
+  flex: 3;
+  padding-left: 10rpx;
+}
+.houseDetail{
+  font-size: 34rpx;
+  color: rgb(34, 34, 34);
+}
+.delBtn{
+  position: absolute;
+  right: 10rpx;
+  top: 0;
+  background: red;
+  width: 120rpx;
+  height: 100%;
+  text-align: center;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  z-index: -1;
+}
+.gg{
+  border: 1px solid red;
+}
 .add{
   position: fixed;
   bottom: 20rpx;
@@ -25,10 +63,32 @@ page{
   height: 90rpx;
   width: 20%;
   background: rgb(187, 201, 60);
-  border-radius: 15rpx;
+  border-radius: 20rpx;
   text-align: center;
   line-height: 80rpx;
   margin: 0 auto;
   font-size: 80rpx;
   color: #fff;
+  z-index: 100;
+}
+.circleL,.circleR{
+  position: fixed;
+  bottom: 20rpx;
+  left: 42%;
+  height: 90rpx;
+  width: 16%;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 80rpx;
+  color: #fff;
+}
+.circleL{
+  background: rgb(184, 182, 65);
+  z-index: 2;
+}
+.circleR{
+  background: rgb(68, 180, 87);
+  z-index: 3;
 }

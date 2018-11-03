@@ -1,0 +1,51 @@
+.registerWrapper{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.phoneFlex{
+  display: flex;
+}
+.houseList{
+  padding-bottom: 130rpx;
+}
+.phoneBox{
+  flex: 3;
+}
+.phone{
+  border: 1rpx solid #999999;
+  padding: 0 10rpx;
+  border-radius: 5px;
+  color: #333;
+  margin-right: 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing:border-box;
+}
+.searchBtn{
+  flex: 1;
+  text-align: center;
+  border-radius: 10rpx;
+  background: rgb(23, 160, 57);
+  color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.houseContent{
+  /* display: flex; */
+  background: rgba(128, 128, 128, 0.089);
+  padding: 22rpx 0;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+.room, .name{
+  flex: 3;
+  padding:0 10rpx;
+  margin-right:10rpx;
+}
+
+.submit{
+  position: fixed;
+  bottom: 0;
+  left: 2%;
+  width: 96%;
+}

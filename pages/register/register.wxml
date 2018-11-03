@@ -35,11 +35,7 @@
         <view>房号</view><view class="companys">{{room[n_room]}}</view>
       </view>
   </picker>
-  <picker bindchange="bindGenderChange" value="{{genderListIndex}}" range="{{gender}}">
-      <view class="picker">
-        <view>性别</view><view class="companys">{{gender[genderListIndex]}}</view>
-      </view>
-  </picker>
+  
   <!-- <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
     <view class="picker">
       <view class="picker">所在小区</view><view class="area">{{multiArray[0][multiIndex[0]]}}</view>

@@ -1,0 +1,5 @@
+<view class = "headerWrapper">
+  <view class="headTitle">{{headData.title}}</view>
+  <view>{{content.content}}</view>
+  <view>{{content.create_time}}</view>
+</view>

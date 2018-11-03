@@ -5,13 +5,13 @@
         <view class="picker">
           <view>性别</view><view class="companys">{{gender[genderListIndex]}}</view>
         </view>
-      </picker>  
+      </picker>
       <view>现用手机号</view><input class="phone" type="number" name="phone" bindblur="bindphone"/>
       <view class="sendTitle">短信验证码</view>
       <view class="sendWrappwer">
         <input class="message" type="number" name="message"/>
         <button bindtap="sendMess" class="sendMess" disabled="{{disabled}}">{{time}}</button>
       </view>
-      <button type="primary" formType="submit">注册并登陆</button>
+      <button type="primary" formType="submit">一键注册</button>
   </form>
 </view>

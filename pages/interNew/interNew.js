@@ -79,8 +79,10 @@ Page({
     // var realestate_id = wx.getStorageSync('realestate_id');
     var accountId = app.account_id;
     var realestate_id = app.realestate_id;
-    var name = app.userInfo.name;
-    var phone = app.userInfo.phone;
+    var ii = app.userInfo;
+    console.log(ii);
+    var name = app.userInfo[app.signal].name;
+    var phone = app.userInfo[app.signal].phone;
     if (str == '' || str == undefined || str == null) {
       wx.showToast({
         title: '请输入有效内容',

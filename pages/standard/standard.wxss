@@ -1,0 +1,4 @@
+/* pages/standard/standard.wxss */
+.headTitle{
+  text-align: center;
+}

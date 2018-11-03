@@ -165,7 +165,7 @@ Page({
     // wx.showNavigationBarLoading(); //在标题栏中显示加载图标
     var that = this;
     wx.showLoading({
-      title: that.data.text,
+      title: that.data.text
     })
     var url = app.url+'invoice/index';//根据实际情况定义请求的路径
     // var payIndex = wx.getStorageSync('realestate_id'); 

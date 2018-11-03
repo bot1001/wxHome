@@ -78,7 +78,7 @@
         </view>
       </view>
 
-      <view class="personal-info" wx:if="{{userInfo}}">
+      <view class="personal-info topnone" wx:if="{{userInfo}}">
         <view class="number">
           <view class="info-header">联系电话</view>
           <view class="info-foot">{{userInfo.phone}}</view>

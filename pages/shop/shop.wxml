@@ -1,0 +1,41 @@
+<view class="shopWrapper">
+  
+    <view class="showList" wx:for="{{shopList}}" wx:for-item="item" wx:for-index="index">
+      <view class="box1" bindtap='gg' data-index="{{index}}">
+        <view class="check">
+          <image src="../../images/check.png" class="icon" wx:if="{{item.check}}"></image>
+        </view>
+      </view>
+      <view class="box2">
+        <image class="image"></image>
+      </view>
+      <view class="box3">
+        <view class="box3Name">{{item.name}}</view>
+        <view class="box3Subhead">{{item.subhead}}</view>
+        <view class="amout">
+          <view class="price">￥{{item.price}}</view>
+          <view class="sum">
+            <view class="reduce">
+              <view class="reducee" bindtap='reduce' wx:if="{{item.left}}" data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">-</view>
+            </view>
+            <view class="summation">{{item.summation}}</view>
+            <view class="plus">
+            <view class="pluss" bindtap='plus' data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  <view class="payWrapper">
+    <view class="allChoice" bindtap="allChoice">
+      <view class="allCheck">
+        <image src="../../images/check.png" class="icon" wx:if="{{check}}"></image>
+      </view>
+    </view>
+    <view class="payMoney">合计:
+      <text class="amount1">￥{{sumMoney}}</text>
+    </view>
+    <view class="payBtn" bindtap="payBtn">缴费</view>
+  </view>
+</view>

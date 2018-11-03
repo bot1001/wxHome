@@ -1,0 +1,17 @@
+<view class="registerWrapper">
+    <!-- <view>旧密码</view><input class="phone" type="text" name="oldPassWord" bindblur="bindnick"/> -->
+    <!-- <input class="phone" type="text" name="phone" bindblur="bindphone"/> -->
+    <view class="phoneFlex">
+      <view class="phoneBox"><input class="phone" bindblur="bindnick" type="number" name="phone" placeholder='请输入预留手机号..'/></view>
+      <view class="searchBtn" bindtap='search'>查询</view>
+    </view>
+    <view class="houseList">
+      <view wx:for="{{houseList}}" wx:for-item="item" wx:for-index="index" data-index="{{index}}" class="houseContent" bindtap='houseChoice' style="border:1rpx solid {{item.color}}">
+        <view class="room">房号：{{item.room}}</view>
+        <view class="name">姓名：{{item.owners_name}}</view>
+      </view>
+    </view>
+    <navigator url="../../pages/fastRegisterIn/fastRegisterIn?curId={{curId}}&name={{name}}">
+      <button type="primary" class="submit" disabled='{{register}}'>继续</button>
+    </navigator>
+</view>

@@ -1,25 +1,36 @@
 const app = getApp().globalData;
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     house: '',
-    userInfo:''
+    userInfo:'',
+    houseDetail:'',
+    tempInfo:[],
+    animation: true,
+    see: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this;
+    var that = this,
+        show = [];
     // var houseInfo = app.userInfo[app.signal];
     this.setData({
       house: app.houseInfo,
       userInfo: app.userInfo
     })
-    // console.log(app.userInfo);
+    for(let i = 0;i<app.houseInfo.length;i++){
+      show[i] = false;
+    }
+    that.setData({
+      show: show
+    })
+    // console.log(this.data.show1);
+    // console.log(that.data.house);
     // console.log(app.realestateArr);
     // console.log(that.data.house);
   },
@@ -28,7 +39,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.animationL = wx.createAnimation();
+    this.animationR = wx.createAnimation();
   },
 
   /**
@@ -142,7 +154,7 @@ Page({
             if(signal == ind){
               app.signal = 0;
             }else if(signal<ind){    
-              console.log(app.signal);
+              // console.log(app.signal);
               return;
             }else{
               app.signal = signal-1;
@@ -156,6 +168,54 @@ Page({
       complete: function (res) { 
        
       },//接口调用结束的回调函数（调用成功、失败都会执行）
+    })
+  },
+  houseDetail:function(e){
+    var that = this;
+    // console.log(e.currentTarget.dataset.index);
+    var houseIndex = e.currentTarget.dataset.index;
+    var tf = that.data.show[houseIndex];
+    wx.request({
+      url: app.url + 'realestate/one?realestate=' + app.realestateArr[houseIndex],
+      success:function(res){
+        let show = that.data.show;
+        for(let i=0;i<show.length;i++){
+          if (i == houseIndex){
+            show[houseIndex] = !tf;
+          }else{
+            show[i] = false;
+          }
+        }
+        // show[houseIndex] = !tf
+        that.setData({
+          houseDetail: res.data,
+          show: show
+        })
+        
+        // console.log(that.data.show);
+      }
+    })
+  },
+  rotate:function(){
+   
+      this.animationL.translate(-50).step();
+      this.animationR.translate(50).step();
+      this.setData({
+        animationL: this.animationL.export(),
+        animationR: this.animationR.export(),
+       see: false
+      })
+    
+    
+    
+  },
+  bg:function(){
+    this.animationL.translate(0).step({ duration: 0 });
+    this.animationR.translate(0).step({ duration: 0 });
+    this.setData({
+      see: true,
+      animationL: this.animationL.export(),
+      animationR: this.animationR.export()
     })
   }
 })

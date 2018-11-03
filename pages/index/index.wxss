@@ -149,6 +149,9 @@
 .range-info,.personal-info,.time-info{
   border: 1rpx solid #17b3ec;
 }
+.topnone{
+  border-top: none;
+}
 /* .range-info.area{
   border-bottom: none;
 } */

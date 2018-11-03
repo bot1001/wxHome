@@ -4,12 +4,13 @@
 }
 .registerWrapper{
   padding: 20rpx;
+  box-sizing:border-box;
 }
 .sendWrappwer{
   display: flex;
   flex-direction: row;
 }
-.phone,.message{
+.phone,.message,.companys{
   background: #e3e3e3;
   padding: 10rpx;
   border:none;
@@ -27,13 +28,4 @@
   margin: 20rpx 0 20rpx 20rpx;
   font-size: 22rpx;
 }
-.companys{
-  background: #e3e3e3;
-  padding: 10rpx;
-  border:none;
-  border-radius: 5px;
-  margin: 20rpx auto;
-  min-width: 70%;
-  color: #333;
-  min-height: 50rpx;
-}
+

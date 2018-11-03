@@ -1,10 +1,41 @@
-<view class="delbox">
-  <view wx:for="{{house}}" wx:for-item="item" wx:for-index="index" class="houseList" bindtap='delhouse' data-index="{{index}}" data-content="{{item}}">
+<view class="delbox" catchtap='bg'>
+  <view wx:for="{{house}}" wx:for-item="item" wx:for-index="index" class="houseList" bind:longpress='delhouse' catchtap='houseDetail' data-index="{{index}}" data-content="{{item}}">
     {{item}}
+    <view class="houseDetail" wx:if="{{show[index]}}">
+      <view class="box">
+        <view class="title">姓名</view>
+        <view class="content">{{houseDetail.name}}</view>
+      </view>
+      <view class="box">
+        <view class="title">联系方式</view>
+        <view class="content">{{houseDetail.phone}}</view>
+      </view>
+      <view class="box">
+        <view class="title">房屋面积</view>
+        <view class="content">{{houseDetail.acreage}}</view>
+      </view>
+      <view wx:if="{{houseDetail.delivery}}" class="box">
+        <view class="title">交付时间</view>
+        <view class="content">{{houseDetail.delivery}}</view>
+      </view>
+      <view wx:if="{{houseDetail.commencement}}" class="box">
+        <view class="title">交房时间</view>
+        <view class="content">{{houseDetail.commencement}}</view>
+      </view>
+      <view wx:if="{{houseDetail.decoration}}" class="box">
+        <view class="title">装修时间</view>
+        <view class="content">{{houseDetail.decoration}}</view>
+      </view>
+    </view>
   </view>
+
 </view>
 
-<navigator url="../relation/relation">
-  <view class='add'>+</view>
-</navigator>
 
+  <view class='add' catchtap="rotate" wx:if="{{see}}">+</view>
+  <navigator url="../../pages/relation/relation">
+    <view class='circleL' animation="{{animationL}}">+</view>
+  </navigator>
+  <navigator url="../../pages/fastRelation/fastRelation">
+    <view class='circleR' animation="{{animationR}}">+</view>
+  </navigator>

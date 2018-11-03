@@ -46,42 +46,42 @@
     <navigator url="../delrelation/delrelation">
       <view class="list">
         <text class='text'>我的房屋</text>
+        <text class="arrow">></text>
       </view>
     </navigator>
-    <!-- <view class="clear" bindtap='clearData'>清理缓存</view> -->
-    <!-- <navigator>
-      <view class='list'>
-        <text class='text'>更换手机号码</text>
-      </view>
-    </navigator> -->
 
-    <navigator>
+    <navigator url="../../pages/passWord/passWord">
       <view class='list'>
         <text class='text'>更换密码</text>
+        <text class="arrow">></text>
       </view>
     </navigator>    
 
-    <navigator>
+    <navigator url="../../pages/guidance/guidance">
       <view class='list'>
         <text class='text'>操作指南</text>
+        <text class="arrow">></text>
       </view>
     </navigator>
 
-    <navigator>
+    <navigator url="../../pages/standard/standard">
       <view class='list'>
         <text class='text'>收费标准</text>
+        <text class="arrow">></text>
       </view>
     </navigator>
 
     <navigator>
       <view class='list'>
         <text class='text'>设置</text>
+        <text class="arrow">></text>
       </view>
     </navigator>
 
     <navigator>
       <view class='list'>
         <text class='text'>关于</text>
+        <text class="arrow">v.1.0.6.2</text>
       </view>
     </navigator>
   </view>

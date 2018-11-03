@@ -39,7 +39,7 @@ Page({
             var r = res.data;
             if(!r.unionid && r.openid){ //判断用户是否关注公众号
               wx.reLaunch({ //如果未关注则转跳到提醒页面
-                url: '../../pages/remind/remind',
+                url: '../../pages/remind/remind'
               })
             }else{
               app.openid = r.openid;
@@ -57,7 +57,7 @@ Page({
                   // console.log(r);
                   if (!r) {
                     wx.reLaunch({
-                    url: '../../pages/register/register', //转条到注册页面
+                    url: '../../pages/registerMethod/registerMethod', //转条到注册选择页面
                     })
                   } else {
                     app.account_id = r.user.account_id;
@@ -172,24 +172,6 @@ Page({
 
                       }
                     })
-                    //公告栏更多
-                    wx.request({
-                      url: app.url + 'news/home',
-                      data: {
-                        community: userInfo[app.signal].community,
-                        // community:'金碧天誉',
-                        page: 1
-                      }, success: function (res) {
-                        // console.log(res);
-                        if (res.data) {
-                          return;
-                        } else {
-                          // that.setData({
-                          //   more: false
-                          // })
-                        }
-                      }
-                    })
                   }
                 }
               })
@@ -198,6 +180,17 @@ Page({
         })
       }
     })
+    if(app.fastRegist == 1){
+      wx.showModal({
+        title: '温馨提示',
+        showCancel: false,
+        content: '注册信息是系统默认信息，请及时核对、修改个人信息',
+        success(res) {
+         
+        }
+      })
+    }
+    app.fastRegist = 0;
   },
 
   dateYM:function(){

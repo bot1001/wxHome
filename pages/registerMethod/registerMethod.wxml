@@ -1,0 +1,11 @@
+<view class="rmWrapper">
+  <view class="tips">请选择注册方式</view>
+  <view class="modeWrapper">
+    <navigator url="../../pages/register/register">
+      <button class="general">注册</button>
+    </navigator>
+    <navigator url="../../pages/fastRegister/fastRegister">
+      <button class="quick">快捷注册</button>
+    </navigator>
+  </view>
+</view>
