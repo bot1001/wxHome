@@ -29,10 +29,6 @@ Page({
     that.setData({
       show: show
     })
-    // console.log(this.data.show1);
-    // console.log(that.data.house);
-    // console.log(app.realestateArr);
-    // console.log(that.data.house);
   },
 
   /**
@@ -204,10 +200,7 @@ Page({
         animationL: this.animationL.export(),
         animationR: this.animationR.export(),
        see: false
-      })
-    
-    
-    
+      })      
   },
   bg:function(){
     this.animationL.translate(0).step({ duration: 0 });

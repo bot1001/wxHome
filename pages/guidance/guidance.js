@@ -1,18 +1,33 @@
 // pages/guidance/guidance.js
+const app = getApp().globalData;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    content: '',
+    url: app.url+"instruction/web?id=",
+    page: '1',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that =this;
+    wx.request({ //设置请求url和参数
+      url: app.url +'instruction/index',
+      data:{
+        type: '1',
+        page: that.data.page
+      },
+      success:function(res){
+        that.setData({
+          content: res.data
+        })
+      }
+    })
   },
 
   /**

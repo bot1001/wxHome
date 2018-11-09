@@ -12,6 +12,6 @@
         <input class="message" type="number" name="message"/>
         <button bindtap="sendMess" class="sendMess" disabled="{{disabled}}">{{time}}</button>
       </view>
-      <button type="primary" formType="submit">一键注册</button>
+      <button type="primary" formType="submit">继续</button>
   </form>
 </view>

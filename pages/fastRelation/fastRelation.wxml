@@ -14,6 +14,6 @@
         <view class="name">姓名：{{item.name}}</view>
       </view>
     </view>
-    <button type="primary" formType="submit" class="submit">一键关联</button>
+    <button type="primary" formType="submit" class="submit">继续</button>
   </form>
 </view>

@@ -1,1 +1,10 @@
-<!-- <web-view src="https://www.baidu.com/"></web-view> -->
+<view wx:for="{{content}}" wx:key="{{itemt.id}}" class='guidance'>
+  <view class='content'>
+    <navigator url="../web/web?id={{item.id}}&url={{url}}">
+    <div id="content">
+      <view class='title'>{{item.title}}</view>
+      <view class='version'>{{item.version}}</view>
+    </div>      
+    </navigator>    
+  </view>
+</view>

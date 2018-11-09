@@ -28,7 +28,7 @@
     <view class="pay-wrapper">
       <view class="notice-icon">
         <image src="../../images/pay.png" style="width: 40rpx;height:40rpx"/>缴费
-         <navigator class="notice-more" url="../order/order">我的订单</navigator>
+        <navigator class="notice-more" url="../order/order">我的订单</navigator>
       </view>
       <navigator url="../payDetail/payDetail">
         <view class="pay-content">

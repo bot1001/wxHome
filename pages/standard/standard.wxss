@@ -1,4 +1,29 @@
-/* pages/standard/standard.wxss */
-.headTitle{
+/* pages/guidance/guidance.wxss */
+.guidance{
+  width: 95%;
+  margin: auto;
+  font-size: 40rpx;
+  position: relative;
+  top: 5px;
+}
+
+.content{
+  background: rgba(128, 128, 128, 0.089);
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;  
+}
+
+#content{
+  display: flex;
+  padding: 10rpx;
+}
+
+.title{
+  min-width: 80%;
+}
+
+.version{
   text-align: center;
+  color: gray;
+  width: 20%;
 }

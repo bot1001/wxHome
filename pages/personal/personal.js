@@ -27,10 +27,14 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 点击版本弹出提醒信息
    */
-  onReady: function () {
-
+  version:function(){
+    // wx.showToast({
+    //   title: '增加操作指南和收费标',
+    //   duration: 3000,
+    //   icon: ''
+    // })
   },
 
   /**

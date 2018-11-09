@@ -6,7 +6,9 @@ Page({
    */
   data: {
     headData: '',
-    content:''
+    content:'',
+    page: '1',
+    url: app.url +'community-fees/web?id=',
   },
 
   /**
@@ -14,31 +16,22 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    let userInfo = app.userInfo[app.signal];
-    let community = userInfo.community;
-    // wx.request({
-    //   url: 'http://192.168.172.84/community-fees/index?community=' + community,
-    //   success:function(res){
-    //     var data = res.data;
-    //     that.setData({
-    //       headData: data[0]
-    //     })
-    //     if(data){
-    //       wx.request({
-    //         url: 'http://192.168.172.84/community-fees/one?id=' + data[0].id,
-    //         success:function(res){
-    //           // console.log(res.data);
-    //           that.setData({
-    //             content: res.data
-    //           })
-    //         }
-    //       })
-    //     }else{
-    //       return
-    //     }
-        
-    //   }
-    // })  
+    let community = '金座小区';//userInfo.community;
+
+    wx.request({//设置访问请求
+      url: app.url+'community-fees/index',
+      data:{
+        community: community,
+        page: that.data.page,
+      },
+      success: function (res) {
+        console.log(res.data);
+        that.setData({ //实时赋值
+          content: res.data
+        })
+      }
+    
+    })  
   },
 
   /**
@@ -48,19 +41,6 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面卸载
