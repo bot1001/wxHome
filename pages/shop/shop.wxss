@@ -15,8 +15,8 @@
   display:inline;
 }
 .check {
-  width: 50rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
   line-height: 200rpx;
   border-radius: 50%;
   border: 1rpx solid #c4c3c3;
@@ -44,7 +44,7 @@
   box-sizing: border-box;
 }
 .box3Subhead{
-  font-size: 34rpx;
+  font-size: 32rpx;
   color: #666666;
 }
 /* .box3Name {
@@ -66,27 +66,36 @@
   color: #666;
   display: flex;
 }
-
-.reduce {
-  flex: 1;
+.reduceBox{
+ flex: 1;
 }
+.plusBox{
+ flex: 1;
+}
+/* .reduce {
+  flex: 1;
+} */
 .reducee {
-  text-align: center;
-  border: 1rpx solid #999;
-  border-radius: 50%;
+  display: block;
+  height:30rpx;
+  width:30rpx;
+  margin:14rpx auto 0 auto;
 }
 .summation {
-  flex: 2;
+  flex: 1;
   text-align: center;
+  background:#e7e7e7;
+  font-size:36rpx;
 }
 
-.plus {
+/* .plus {
   flex: 1;
-}
+} */
 .pluss {
-  text-align: center;
-  border: 1rpx solid #999;
-  border-radius: 50%;
+  display: block;
+ height:30rpx;
+  width:30rpx;
+  margin:14rpx auto 0 auto;
 }
 .payWrapper{
   position: fixed;
@@ -104,25 +113,30 @@
   box-sizing: border-box;
 }
 .allChoice{
-  flex: 1;
+  flex: 2;
   font-size: 30rpx;
   color: #666666;
   text-align:center;
   line-height:100rpx;
   height: 100%;
+    display: flex;
 }
 .allCheck{
-  width: 50rpx;
+  width: 40rpx;
   border-radius: 50%;
   border: 1rpx solid #c4c3c3;
   margin: 25rpx auto 0 auto;
-  height:50rpx;
+  height: 40rpx;
   background:#fff;
+
 }
 .payMoney{
   height: 100%;
   line-height: 100rpx;
-  flex: 3;
+  padding-left: 40rpx;
+  flex: 5;
+  font-size:34rpx;
+  font-weight: 600;
 }
 .payBtn{
   height: 100%;
@@ -131,7 +145,7 @@
   width: 180rpx;
   line-height: 100rpx;
   text-align: center;
-  flex: 1;
+  flex: 3;
 }
 .pay-bottom{
   padding-bottom: 120rpx;
@@ -139,5 +153,17 @@
 }
 .amount1{
   color: #fd612b;
-  font-size: 48rpx;
+  font-size: 34rpx;
+}
+.tips{
+  width: 40%;
+  height: 300rpx;
+  line-height: 300rpx;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  background: rgb(215, 238, 153);
+  font-size: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
 }

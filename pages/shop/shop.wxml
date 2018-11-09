@@ -15,27 +15,39 @@
         <view class="amout">
           <view class="price">￥{{item.price}}</view>
           <view class="sum">
-            <view class="reduce">
-              <view class="reducee" bindtap='reduce' wx:if="{{item.left}}" data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">-</view>
+          <view class="reduceBox">
+               <view class="reduce" bindtap='reduce' wx:if="{{item.left}}" data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">
+              <!-- <view class="reducee" >-</view> -->
+              <image src="../../images/reduce.png" class="reducee"></image>
             </view>
+          </view>
+         
             <view class="summation">{{item.summation}}</view>
-            <view class="plus">
-            <view class="pluss" bindtap='plus' data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">+</view>
+            <view class="plusBox">
+                <view class="plus" bindtap='plus' data-index="{{index}}" data-id="{{item.id}}" data-property="{{item.property}}">
+            <!-- <view class="pluss">+</view> -->
+            <image src="../../images/plus.png" class="pluss"></image>
             </view>
+            </view>
+          
           </view>
         </view>
       </view>
     </view>
 
-  <view class="payWrapper">
+<view class="payWrapper" wx:if="{{shopList}}">
     <view class="allChoice" bindtap="allChoice">
       <view class="allCheck">
         <image src="../../images/check.png" class="icon" wx:if="{{check}}"></image>
       </view>
+       <view>全选</view>
     </view>
     <view class="payMoney">合计:
       <text class="amount1">￥{{sumMoney}}</text>
     </view>
-    <view class="payBtn" bindtap="payBtn">缴费</view>
+    
+      <view class="payBtn" bindtap='shopPay'>去结算({{num}})</view>
+
   </view>
+  <view class="tips" wx:else>暂无记录</view>
 </view>

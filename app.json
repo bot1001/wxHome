@@ -23,7 +23,8 @@
     "pages/fastRelation/fastRelation",
     "pages/standard/standard",
     "pages/fastRegisterIn/fastRegisterIn",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/shopPay/shopPay"
   ],
   "window": {
     "backgroundTextStyle": "light",
