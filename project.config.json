@@ -108,8 +108,8 @@
 				},
 				{
 					"id": 12,
-					"name": "收费标准",
-					"pathName": "pages/standard/standard",
+					"name": "我的地址",
+					"pathName": "pages/address/address",
 					"query": ""
 				}
 			]

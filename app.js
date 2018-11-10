@@ -54,9 +54,8 @@ App({
     signal :0,
     realestateArr:'',
     houseInfo:'',
-    fastRegist: 0
-    // notice:'',
-    // more: true
+    fastRegist: 0,
+    session_key:''
   },
   onLoad: function () {
     

@@ -50,9 +50,16 @@
       </view>
     </navigator>
 
+    <navigator url="../address/address">
+      <view class="list">
+        <text class='text'>我的地址</text>
+        <text class="arrow">></text>
+      </view>
+    </navigator>
+
     <navigator url="../../pages/passWord/passWord">
       <view class='list'>
-        <text class='text'>更换密码</text>
+        <text class='text'>更改密码</text>
         <text class="arrow">></text>
       </view>
     </navigator>    
@@ -71,18 +78,11 @@
       </view>
     </navigator>
 
-    <navigator>
+    <navigator url='../../pages/setting/setting'>
       <view class='list'>
         <text class='text'>设置</text>
         <text class="arrow">></text>
       </view>
-    </navigator>
-
-    <navigator>
-      <view class='list' bindtap='version'>
-        <text class='text'>关于</text>
-        <text class="arrow">v.1.0.6.5</text>
-      </view>
-    </navigator>
+    </navigator>    
   </view>
 </view>

@@ -28,9 +28,7 @@
       </view>
     </view>
   </view>
-
 </view>
-
 
   <view class='add' catchtap="rotate" wx:if="{{see}}">+</view>
   <navigator url="../../pages/relation/relation">

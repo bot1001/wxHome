@@ -25,7 +25,9 @@
     "pages/fastRegisterIn/fastRegisterIn",
     "pages/shop/shop",
     "pages/shopPay/shopPay",
-    "pages/web/web"
+    "pages/web/web",
+    "pages/setting/setting",
+    "pages/address/address"
   ],
   "window": {
     "backgroundTextStyle": "light",

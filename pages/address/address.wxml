@@ -1,0 +1,8 @@
+<!--pages/address/address.wxml-->
+<view wx:if="{{show}}">
+  <textarea placeholder="点击此处输入内容" class="textarea" auto-height name="textarea" value='{{address}}'>
+  </textarea>
+</view>
+
+<view bindtap='add' class='add'>+</view>
+

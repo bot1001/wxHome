@@ -27,17 +27,6 @@ Page({
   },
 
   /**
-   * 点击版本弹出提醒信息
-   */
-  version:function(){
-    // wx.showToast({
-    //   title: '增加操作指南和收费标',
-    //   duration: 3000,
-    //   icon: ''
-    // })
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {

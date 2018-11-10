@@ -1,0 +1,42 @@
+<!--pages/setting/setting.wxml-->
+
+<navigator url="../../pages/web/web?id=4&url={{url}}">
+  <view class='list t'>
+    <text class='text'>服务协议</text>
+    <text class="arrow">></text>
+  </view>
+</navigator>
+
+<navigator url='../../pages/web/web?id=5&url={{url}}'>
+  <view class='list'>
+    <text class='text'>隐私条款</text>
+    <text class="arrow">></text>
+  </view>
+</navigator>
+
+<view class='list' bindtap='phone' id='0772-5314739'>
+  <text class='text'>客服电话</text>
+  <text class="arrow">0772-5314739</text>
+</view>
+
+<view class='list'>
+  <text class='text'>版权所有</text>
+  <text class="arrow">广西裕达物业></text>
+</view>
+
+<view class='list'>
+  <text class='text'>技术支持</text>
+  <text class="arrow">自主研发></text>
+</view>
+
+<view class='list' bindtap='version'>
+  <text class='text'>关于</text>
+  <text class="arrow">></text>
+</view>
+
+<view bindtap='remove' class='list' id='cache'>
+  <text class='cache'>清空缓存</text>
+</view>
+
+<!-- <button open-type='getUserInfo'>点击获取用户资料</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击获取用户手机号码</button>  -->

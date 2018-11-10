@@ -37,6 +37,7 @@ Page({
           },
           success: function(res) {
             var r = res.data;
+            app.session_key = r.session_key; //贮存session密钥
             if(!r.unionid && r.openid){ //判断用户是否关注公众号
               wx.reLaunch({ //如果未关注则转跳到提醒页面
                 url: '../../pages/remind/remind'

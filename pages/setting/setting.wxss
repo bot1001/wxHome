@@ -1,0 +1,29 @@
+/* pages/setting/setting.wxss */
+.list, .b{
+  width: 97%;
+  margin: auto;
+  margin-bottom: 10rpx;  
+  border-radius: 10rpx;
+  background:rgba(128, 128, 128, 0.15);
+}
+.t{
+  margin-top: 10rpx;
+}
+
+.list{
+  padding-top: 10px;
+  padding-bottom:  10px;  
+}
+.text, .cache{
+  margin-left: 5px;
+}
+#cache{
+  background: rgba(255, 0, 0, 0.507);
+  text-align: center;
+}
+
+.arrow{
+  float: right;
+  color: #999999;
+  padding-right: 20rpx;
+}

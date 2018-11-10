@@ -66,11 +66,11 @@
   left: 2%;
   width: 90%;
   margin: auto;  
-  background: #0fd0bd;
+  background: #0fd0bd52;
   border-radius: 15rpx;
 }
 .interInput{
-  min-height: 50rpx;
+  min-height: 300rpx;
   border: none;
   border-radius: 5px;
 }
@@ -78,6 +78,7 @@
   font-size: 32rpx;
 }
 .submit{
+  margin-top:15rpx;
   width: 180rpx;
   font-weight: bolder;
 }
