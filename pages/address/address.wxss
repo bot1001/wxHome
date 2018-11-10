@@ -15,11 +15,79 @@
   z-index: 100;
 }
 
-.textarea{
+.address{
   width: 95%;
   margin: auto;
   margin-top: 20rpx;
+}
+
+.textarea, .name, .phone{
   border-radius: 15rpx;
-  min-height: 300rpx;
   background: rgba(128, 128, 128, 0.13);
+}
+
+.message{
+  width: 50%;
+  padding: 10rpx;
+  font-size: 40rpx;
+  color: gray
+}
+
+.textarea{
+  min-height: 120rpx; 
+  width: 100%; 
+}
+
+.name, .phone{
+  min-height: 80rpx;
+}
+
+.img{
+  width: 50%;
+  border-radius: 15rpx;
+  text-align: right;
+}
+.a_i{
+  display: flex;
+}
+#img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 15rpx;
+  padding: 10rpx;
+}
+
+.sub{
+  margin-top:15rpx;
+  background: rgb(150, 238, 223);
+  font-size: 45rpx;
+}
+
+.one{
+  background: gainsboro;
+  width: 97%;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+}
+
+.a_address_name{
+  display: flex;
+  border: solid 1rpx rgba(172, 255, 47, 0.288);
+  border-radius: 5rpx;
+}
+.a_name, .a_phone, .a_edite{
+  width: 33%
+}
+.a_name{
+  padding-left: 15rpx;
+}
+.a_phone{
+  text-align: center;
+}
+.a_edite{
+  text-align: right;
+  padding-right: 15rpx;
+  color: rgba(0, 0, 255, 0.397)
 }

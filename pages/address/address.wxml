@@ -1,8 +1,38 @@
 <!--pages/address/address.wxml-->
-<view wx:if="{{show}}">
-  <textarea placeholder="点击此处输入内容" class="textarea" auto-height name="textarea" value='{{address}}'>
-  </textarea>
+<view class='address_list'>
+  <view wx:for="{{address}}" wx:key="{{item.id}}">
+    <view class='one' bindlongtap='del' id='{{item.id}}'>
+      <view class='a_address'>{{item.address}}</view>
+      <view class='a_address_name'>
+        <view class='a_name'>{{item.name}}</view>
+        <view class='a_phone'>{{item.phone}}</view>
+        <view class='a_edite' bindtap='edite' data-id='{{item.id}}' data-address='{{item.address}}' data-name='{{item.name}}' data-phone='{{item.phone}}'>编辑</view>
+      </view>
+    </view>        
+  </view>
 </view>
 
-<view bindtap='add' class='add'>+</view>
+<view wx:if="{{show}}" class='address'>
+  <form bindsubmit='submit'>
+    <div>
+        <textarea placeholder="点击此处输入内容" class="textarea" auto-height name="address" value='{{address_edite}}'></textarea>
+    </div>
+  
+    <div class='a_i'>
+      <view class='message'>收货人</view>
+      <div class='img'>
+        <image src="/images/location.jpg" id='img' bindtap='location'>image</image>
+      </div>      
+    </div>
+    
+    <input placeholder='请输入收货人姓名' class='name' name='name' type='text' confirm-type='next' value='{{name}}'></input>
+  
+    <view class='message'>手机号码</view>
+    <input type='number' name='phone' class='phone' placeholder='请输入收件人联系方式' value='{{phone}}'></input>
+    <button class='sub' form-type='submit'>确定</button>
+  </form>  
+</view>
+
+  <view class='add' bindtap='add' id="{{and}}">{{and}}</view>
+
 
